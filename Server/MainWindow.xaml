@@ -8,47 +8,5 @@
         Title="QuizMaster" Height="500" Width="1025" Background="#FF0A0A0A" WindowStartupLocation="CenterScreen">
 
 
-    <Grid >
-
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="1*" />
-            <ColumnDefinition Width="1*" />
-            <ColumnDefinition Width="1*"/>
-            <ColumnDefinition Width="1*" />
-            <ColumnDefinition Width="1*" />
-        </Grid.ColumnDefinitions>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="37*" />
-            <RowDefinition Height="15*"/>
-            <RowDefinition Height="9*"/>
-            <RowDefinition Height="6*"/>
-            <RowDefinition Height="6*"/>
-            <RowDefinition/>
-            <RowDefinition Height="0*"/>
-            <RowDefinition Height="0*"/>
-            <RowDefinition Height="0*"/>
-            <RowDefinition Height="163*" />
-            <RowDefinition Height="118*" />
-            <RowDefinition Height="118*" />
-
-        </Grid.RowDefinitions>
-
-        <Button Grid.Row="9" Grid.ColumnSpan="2" Margin="98,51.31,78.338,43.254" Grid.RowSpan="2" Background="#FF440000">PUZZLE EDITOR</Button>
-        <Button Grid.Column="0" Background="#FF440000" Margin="0,0,1.169,1.056" Grid.RowSpan="2">PROVA 1</Button>
-        <Button Background="#FF440000"  Margin="0.831,0,0.338,1.056" Grid.Column="1" Grid.RowSpan="2">PROVA 2</Button>
-        <Button Grid.Column="1" Background="#FF440000" Grid.ColumnSpan="3" Margin="203.831,0,204,1.056" Grid.RowSpan="2">PROVA 3</Button>
-        <Button Grid.Column="3" Background="#FF440000" Margin="0.169,0,0,1.056" Grid.RowSpan="2">PROVA 4</Button>
-        <Button Grid.Column="4" Background="#FF440000" Margin="0,0,0.493,1.056" Grid.RowSpan="2">PROVA 5</Button>
-
-    </Grid>
-
-
-    <Window.Resources>
-        <Style TargetType="Button">
-            <Setter Property="FontSize" Value="24"></Setter>
-            <Setter Property="Foreground" Value="White" ></Setter>
-            <Setter Property="FontFamily" Value="Lucida Bright"></Setter>
-
-        </Style>
-    </Window.Resources>
+    
 </Window>
