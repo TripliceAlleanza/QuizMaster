@@ -103,5 +103,14 @@
     <Folder Include="Networking\" />
     <Folder Include="PuzzleEditor\" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icons8-aggiungi-128.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icons8-apri-cartella-96.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icons8-salva-96.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

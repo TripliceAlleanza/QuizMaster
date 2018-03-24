@@ -5,8 +5,51 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:QuizMaster___Server"
         mc:Ignorable="d"
-        Title="QuizMaster" Height="500" Width="1025" Background="#FF0A0A0A" WindowStartupLocation="CenterScreen">
+        Title="QuizMaster" Height="500" Width="1025" Background="Black" WindowStartupLocation="CenterScreen">
+
+    <DockPanel>
+        <ToolBarTray DockPanel.Dock="Top">
+            <ToolBarTray.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black" Offset="0"/>
+                    <GradientStop Color="Black" Offset="1"/>
+                </LinearGradientBrush>
+            </ToolBarTray.Background>
+            <ToolBar Height="51" Margin="0,0,-1019,0" Background="White">
+
+                <Button Command="New"  BorderBrush="White" Background="#FF850000"
+                Foreground="White" Margin="0,0,0,3.085" Width="52" Height="51">
+                    <Image Source="/Resources/icons8-aggiungi-128.png" OpacityMask="White" Width="42" RenderTransformOrigin="0.529,0.466"/>
+                </Button>
 
 
-    
+                <Separator/>
+
+                <Button Command="Save"  BorderBrush="White" Background="#FF850000"
+                Foreground="White" Margin="0,0,0,3.085" Width="53" Height="51">
+                    <Image Source="/Resources/icons8-salva-96.png" Width="79" Height="46"></Image>
+                </Button>
+
+
+                <Separator/>
+
+                <Button Command="Open"  BorderBrush="White" Background="#FF850000" 
+                 Foreground="White" Margin="0,0,0,3.085" Width="57" Height="51">
+                    <Image Source="Resources/icons8-apri-cartella-96.png"></Image>
+                </Button>
+            </ToolBar>
+        </ToolBarTray>
+
+        <Button FontSize="15" Content="PUZZLE EDITOR" Margin="650,0,0,0" Width="116" Height="100" Background="#FF850000" Foreground="White" BorderBrush="White" />
+
+    </DockPanel>
+
+
+
+
+
+
+
+
+
 </Window>
