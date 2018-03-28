@@ -12,14 +12,20 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using QuizMaster___Server.Networking;
 
 namespace QuizMaster___Server {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
     /// </summary>
     public partial class MainWindow : Window {
+
+	    private CommunicationsManager manager;
+
         public MainWindow() {
             InitializeComponent();
+			manager = new CommunicationsManager();
+			manager.Start();
         }
     }
 }

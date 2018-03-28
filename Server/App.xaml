@@ -4,6 +4,6 @@
              xmlns:local="clr-namespace:QuizMaster___Server"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-         
+        <ResourceDictionary Source="Styles/Colors.xaml"/>
     </Application.Resources>
 </Application>
