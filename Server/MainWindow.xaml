@@ -56,7 +56,11 @@
         </DockPanel>
 
         <DockPanel Grid.Column="1" Background="#FF161515" >
-            <ListBox x:Name="lstListaQuiz" Height="472" VerticalAlignment="Top" Width="341" Margin="0,0,0,-0.113" Background="#FF080809" ScrollViewer.VerticalScrollBarVisibility="Visible"/>
+            <ListBox x:Name="lstListaQuiz" Height="472" VerticalAlignment="Top" Width="341" Margin="0,0,0,-0.113" Background="#FF080809" ScrollViewer.VerticalScrollBarVisibility="Auto" UseLayoutRounding="False">
+                <ListBoxItem Content="QUI CI ANDRANNO I QUIZ FATTI" Background="#FF303030" Height="30" FontSize="22" Foreground="White"/>
+                <ListBoxItem Background="#FF303030" Height="30"/>
+                <ListBoxItem Background="#FF303030" Height="30"/>
+            </ListBox>
         </DockPanel>
 
 
