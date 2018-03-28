@@ -105,17 +105,16 @@
     <Folder Include="PuzzleEditor\" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resources\red_lines_background_texture_69795_3840x2400.jpg" />
+    <Resource Include="Resources\icons8-puzzle-500.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resources\fondos-wallpaper-gratis-abstractos-459.jpg" />
+    <Resource Include="Resources\icons8-puzzle-500 %281%29.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resources\10151270.jpg" />
-    <Resource Include="Resources\Blue-Abstract-Background-10-1.jpg" />
+    <Resource Include="Resources\icons8-checklist-64.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resources\fondo-rojo-circular-abstracto_8466-2.jpg" />
+    <Resource Include="Resources\icons8-scorecard-100.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
