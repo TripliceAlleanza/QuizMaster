@@ -7,34 +7,27 @@
         mc:Ignorable="d"
         Title="QuizMaster" Height="500" Width="1025" Background="White" WindowStartupLocation="CenterScreen">
 
-    
-        
-        <DockPanel Margin="744,0,0,-0.113" LastChildFill="False" Background="#FF0C0A0A">
-            <DockPanel.Effect>
-                <DropShadowEffect Color="#FFC50000" ShadowDepth="0" BlurRadius="0"/>
-            </DockPanel.Effect>
+   
 
-            <Button  x:Name="btnPuzzleEditor" Height="106" Width="200" BorderThickness="1,1,2,2" FontSize="36" RenderTransformOrigin="0.5,0.5" BorderBrush="#FF330000" DockPanel.Dock="Right" Margin="35,104,35.423,0" >
-                <Button.Background>
-                    <ImageBrush ImageSource="Resources/fondo-rojo-circular-abstracto_8466-2.jpg" Stretch="UniformToFill" TileMode="FlipXY"/>
-                </Button.Background>
-                <Button.Effect>
-                    <DropShadowEffect Color="#FFC00000" BlurRadius="0" ShadowDepth="0"/>
-                </Button.Effect>
-                <Button.Foreground>
-                    <ImageBrush ImageSource="Resources/Blue-Abstract-Background-10-1.jpg"/>
-                </Button.Foreground>
-                <StackPanel Orientation="Horizontal">
-                    <TextBlock Text="Puzzle&#10;Editor" FontFamily="Arial Black" FontSize="42" TextAlignment="Center" Foreground="White">
-                        <TextBlock.Effect>
-                            <DropShadowEffect BlurRadius="3" ShadowDepth="2.5"/>
-                        </TextBlock.Effect>
-                    </TextBlock>
-                </StackPanel>
-            </Button>
-        
+        <!-- 
+        <StackPanel Width="300" Height="auto" ></StackPanel>
+        <StackPanel Width="300" Height="auto" ></StackPanel>
+        <StackPanel Width="300" Height="auto" HorizontalAlignment="Right" />
 
-    </DockPanel>
+        -->
 
-  
+        <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"></ColumnDefinition>
+            <ColumnDefinition Width="1*"></ColumnDefinition>
+            <ColumnDefinition Width="1*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+
+        <DockPanel Grid.Column="0" Background="#FF0C0B0B" ></DockPanel>
+        <DockPanel Grid.Column="1" Background="#FF161515" ></DockPanel>
+        <DockPanel Grid.Column="2" Background="#FF0C0B0B" ></DockPanel>
+
+    </Grid>
+            
+   
 </Window>
