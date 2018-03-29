@@ -26,19 +26,40 @@
 
             <Grid>
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="41*"></RowDefinition>
-                    <RowDefinition Height="136*"></RowDefinition>
-                    <RowDefinition Height="59*"></RowDefinition>
+                    <RowDefinition Height="80*"></RowDefinition>
+                    <RowDefinition Height="319*"></RowDefinition>
+                    <RowDefinition Height="73*"></RowDefinition>
                 </Grid.RowDefinitions>
 
-                <StackPanel Grid.Row="1">
+                <StackPanel Grid.Row="0" VerticalAlignment="Center" HorizontalAlignment="Center">
+                    <TextBlock Text="BUONGIORNO UN CAZZO" FontSize="22" FontFamily="Bell MT" Foreground="#FF2567D0" ></TextBlock>
+                </StackPanel>
+
+                <StackPanel  Background="#FF222121" Grid.Row="1">
+
+
+                    <StackPanel Orientation="Horizontal" Height="30" Margin="15,130,0,0">
+                        <TextBlock Text="N° Macchina" Foreground="#FF2865D0" FontSize="20" FontFamily="Bell MT" VerticalAlignment="Center"/>
+                        <TextBox x:Name="txtNumMacchina" Text="C215-011" Foreground="#FF1B1B1C" FontSize="20" FontFamily="Bell MT" Margin="95,0,0,0" MaxWidth="85" MinWidth="85"/>
+                    </StackPanel>
+                    
+                    <StackPanel Orientation="Horizontal" VerticalAlignment="Center" Margin="15,0,0,0" >
+                        <TextBlock Text="IP: " FontSize="20" FontFamily="Bell MT" Foreground="#FF275797" VerticalAlignment="Center" HorizontalAlignment="Center" ></TextBlock>
+                        <Label Content="192.168.1.1" x:Name="lblIP" Foreground="#FF2865D0" FontSize="20" FontFamily="Bell MT" VerticalAlignment="Center" Margin="160,0,0,0"/>
+                    </StackPanel>
+
+
+                    <StackPanel Orientation="Horizontal" Height="30" VerticalAlignment="Center" Margin="15,0,0,0">
+                        <TextBlock Text="Possibilità di tornare indieto" Foreground="#FF275797" FontSize="20" FontFamily="Bell MT" VerticalAlignment="Center"></TextBlock>
+                        <CheckBox x:Name="chkTornaIndietro" Margin="40,0,0,0" IsChecked="True" VerticalAlignment="Center" HorizontalAlignment="Center"  />
+                    </StackPanel>
 
                 </StackPanel>
 
-                <StackPanel  Grid.Row="2" Margin="0,0,0.056,30" VerticalAlignment="Bottom" HorizontalAlignment="Center">
+                <StackPanel  Grid.Row="2" Margin="91,0,91.056,15" VerticalAlignment="Bottom" HorizontalAlignment="Center" Height="40" Width="158">
                     <Button x:Name="btnAvviaQuiz" BorderBrush="Transparent" Background="Transparent" FontSize="30" Foreground="White" FontFamily="Bell MT" HorizontalAlignment="Center" VerticalAlignment="Center" Height="40"  >
                         <Button.Content>
-                            <Border CornerRadius="10" BorderThickness="4,4,4,4" Background="#FF0A367C" VerticalAlignment="Center" HorizontalAlignment="Center" Height="40" Width="155" >
+                            <Border CornerRadius="7" BorderThickness="4,4,4,4" Background="#FF0A367C" VerticalAlignment="Center" HorizontalAlignment="Center" Height="40" Width="155" >
                                 <StackPanel Orientation="Horizontal" Width="{Binding btnQuizEditor.Width}" HorizontalAlignment="Center" VerticalAlignment="Center" Height="40">
                                     <TextBlock Text="Avvia Quiz" FontSize="22" TextAlignment="Center" Width="116" VerticalAlignment="Center" />
                                     <Image  Source="Resources/icons8-riproduci-512.png" Width="25" Height="25"/>
@@ -62,11 +83,11 @@
 
         <DockPanel Grid.Column="2" Background="{StaticResource OpaqueBlack}">
 
-            <StackPanel Orientation="Horizontal" Margin="0,0,0,30" HorizontalAlignment="Center" VerticalAlignment="Bottom" Height="40">
+            <StackPanel Orientation="Horizontal" Margin="0,0,0,15" HorizontalAlignment="Center" VerticalAlignment="Bottom" Height="40">
 
                 <Button x:Name="btnQuizEditor" Background="Transparent" BorderBrush="Transparent" BorderThickness="0" Foreground="White" Width="155" VerticalAlignment="Center">
                     <Button.Content>
-                        <Border CornerRadius="10" BorderThickness="4,4,4,4"  VerticalAlignment="Center" HorizontalAlignment="Center" Width="155" Background="#FF14356A" Height="40" >
+                        <Border CornerRadius="7" BorderThickness="4,4,4,4"  VerticalAlignment="Center" HorizontalAlignment="Center" Width="155" Background="#FF14356A" Height="40" >
                             <StackPanel Orientation="Horizontal" Width="155" Height="40" VerticalAlignment="Center">
                                 <TextBlock  Text="Quiz Editor" Foreground="White" Margin="5,0,0,0" Width="115" FontSize="22" TextAlignment="Center" FontFamily="Bell MT" VerticalAlignment="Center"/>
                                 <Image Source="Resources/icons8-scorecard-100.png" Width="25" Height="25" />
