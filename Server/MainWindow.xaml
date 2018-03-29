@@ -35,12 +35,13 @@
 
                 </StackPanel>
 
-                <StackPanel  Grid.Row="2" Height="83" Margin="0,0.423,0.056,20" HorizontalAlignment="Center" Width="340" VerticalAlignment="Bottom">
-                    <Button x:Name="btnAvviaQuiz" Width="200" Height="54" BorderBrush="Transparent" Background="Transparent" FontSize="30" Foreground="White" FontFamily="Bell MT" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,15,0,0" >
+                <StackPanel  Grid.Row="2" Margin="0,0,0.056,30" VerticalAlignment="Bottom" HorizontalAlignment="Center">
+                    <Button x:Name="btnAvviaQuiz" BorderBrush="Transparent" Background="Transparent" FontSize="30" Foreground="White" FontFamily="Bell MT" HorizontalAlignment="Center" VerticalAlignment="Center" Height="40"  >
                         <Button.Content>
-                            <Border CornerRadius="5" Width="200" Height="54" BorderThickness="4,4,4,4" Background="#FF0A367C" >
-                                <StackPanel Orientation="Horizontal" Width="{Binding btnQuizEditor.Width}">
-                                    <TextBlock Text="Avvia Quiz" FontSize="24" VerticalAlignment="Center" TextAlignment="Center" Margin="0,10,0,9.972" Width="198" />
+                            <Border CornerRadius="10" BorderThickness="4,4,4,4" Background="#FF0A367C" VerticalAlignment="Center" HorizontalAlignment="Center" Height="40" Width="155" >
+                                <StackPanel Orientation="Horizontal" Width="{Binding btnQuizEditor.Width}" HorizontalAlignment="Center" VerticalAlignment="Center" Height="40">
+                                    <TextBlock Text="Avvia Quiz" FontSize="22" TextAlignment="Center" Width="116" VerticalAlignment="Center" />
+                                    <Image  Source="Resources/icons8-riproduci-512.png" Width="25" Height="25"/>
                                 </StackPanel>
                             </Border>
                         </Button.Content>
@@ -61,13 +62,18 @@
 
         <DockPanel Grid.Column="2" Background="{StaticResource OpaqueBlack}">
 
-            <StackPanel Orientation="Horizontal" Margin="0,0,0,20" Height="83" VerticalAlignment="Bottom">
+            <StackPanel Orientation="Horizontal" Margin="0,0,0,30" HorizontalAlignment="Center" VerticalAlignment="Bottom" Height="40">
 
-                <TextBlock  Text="Quiz Editor" Foreground="#FF0F64C8" Margin="60,15,0,0" Width="155" FontSize="30" VerticalAlignment="Center" TextAlignment="Center" FontFamily="Bell MT"/>
-                <Button x:Name="btnQuizEditor" Width="80" Height="80" Foreground="White" Background="Transparent" 
-                    FontSize="24"  BorderBrush="Transparent" BorderThickness="0" VerticalAlignment="Center" Margin="0,15,0,0">
-                    <Image Source="Resources/icons8-scorecard-100.png" Width="60" Height="60" HorizontalAlignment="Center" VerticalAlignment="Center" />
-                    </Button>
+                <Button x:Name="btnQuizEditor" Background="Transparent" BorderBrush="Transparent" BorderThickness="0" Foreground="White" Width="155" VerticalAlignment="Center">
+                    <Button.Content>
+                        <Border CornerRadius="10" BorderThickness="4,4,4,4"  VerticalAlignment="Center" HorizontalAlignment="Center" Width="155" Background="#FF14356A" Height="40" >
+                            <StackPanel Orientation="Horizontal" Width="155" Height="40" VerticalAlignment="Center">
+                                <TextBlock  Text="Quiz Editor" Foreground="White" Margin="5,0,0,0" Width="115" FontSize="22" TextAlignment="Center" FontFamily="Bell MT" VerticalAlignment="Center"/>
+                                <Image Source="Resources/icons8-scorecard-100.png" Width="25" Height="25" />
+                            </StackPanel>
+                        </Border>
+                    </Button.Content>
+                </Button>
             </StackPanel>
         </DockPanel>
 

@@ -129,5 +129,9 @@
   <ItemGroup>
     <Resource Include="Resources\icons8-scorecard-100.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\icons8-riproduci-512.png" />
+    <Resource Include="Resources\icons8-riproduci-filled-100.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
