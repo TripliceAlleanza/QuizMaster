@@ -1,0 +1,33 @@
+{
+
+  // connessione al server c->s
+  "connect": {
+    "name": "Edoardo",
+    "surname": "Fullin",
+    "class": "4G",
+    "state": "waiting"
+  },
+
+  // notifica di avvenuta connessione s->c
+  "connected": {
+    "id": 1001,
+    "puzzle_name": "Questionario della madonnina del dom",
+    "puzzle_time": 3600, // time in seconds
+    "return_allowed": true, // si puo tornare indietro o no
+
+    "puzzle": { /* Puzzle qui */ }
+  },
+
+  // aggiorna il server sui cambiamenti (campi opzionali), c->s
+  "updatestate": {
+    "client": 1001, // id client
+    "state": "testing"
+  },
+
+  // il client notifica al server che è arrivata una risposta a una domanda c->s
+  "notifyanswer": {
+    "question_id": 1,
+    "answer": 1
+  }
+
+}
