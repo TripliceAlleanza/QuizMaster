@@ -3,7 +3,24 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:local="clr-namespace:QuizMaster___Server"
              StartupUri="Views/MainWindow.xaml">
+
     <Application.Resources>
-        <ResourceDictionary Source="Views/Styles/Colors.xaml"/>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Views/Styles/Colors.xaml"/>
+                <ResourceDictionary Source="Views/Styles/Buttons.xaml"/>
+                <ResourceDictionary Source="Views/Styles/Icons.xaml"/>
+                <ResourceDictionary Source="Views/Styles/Borders.xaml"/>
+                <ResourceDictionary Source="Views/Styles/TextBlockStyle1.xaml" />
+                <ResourceDictionary Source="Views/Styles/TextBlockButtons.xaml" />
+                <ResourceDictionary Source="Views/Styles/Label.xaml" />
+                <ResourceDictionary Source="Views/Styles/TextBoxStyle.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
     </Application.Resources>
+
 </Application>
+    
+    
+    
+    

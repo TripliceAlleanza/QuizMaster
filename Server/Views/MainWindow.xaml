@@ -7,40 +7,6 @@
         mc:Ignorable="d"
         Title="QuizMaster" Height="500" Width="1025" Background="White" WindowStartupLocation="CenterScreen">
 
-    <!-- RISORSE GLOBALI-->
-    <Window.Resources>
-
-        <!-- STILE DEFAULT DEI BOTTONI-->
-        <Style TargetType="{x:Type Button}">
-            <Setter Property="Background" Value="#FF1E30B4"/>
-            <Setter Property="Foreground" Value="White"/>
-            <Setter Property="FontSize" Value="30"/>
-            <Setter Property="FontFamily" Value="Bell MT"/>
-            <Setter Property="VerticalAlignment" Value="Center"/>
-            <Setter Property="HorizontalAlignment" Value="Center"/>
-            <Setter Property="BorderBrush" Value="Transparent"/>
-            <Setter Property="BorderThickness" Value="0" />
-            <Setter Property="Height" Value="40"/>
-            <Setter Property="Template">
-                <Setter.Value>
-                    <ControlTemplate TargetType="{x:Type Button}">
-                        <Border Background="{TemplateBinding Background}" BorderBrush="Black" BorderThickness="0">
-                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
-                        </Border>
-                    </ControlTemplate>
-                </Setter.Value>
-            </Setter>
-            <Style.Triggers>
-                <Trigger Property="IsMouseOver" Value="True">
-                    <Setter Property="Background" Value="#FF2661D0"/>
-                </Trigger>
-                <Trigger Property="Button.IsPressed" Value="True">
-                    <Setter  Property="Background" Value="#FF2D79F2" />
-                </Trigger>
-            </Style.Triggers>
-        </Style>
-        
-    </Window.Resources>
 
     <!-- INSERIMETO TABELLA CHE OCCUPA TUTTO IL FORM-->
     <Grid>
@@ -75,7 +41,7 @@
 
                 <!-- ANCORA DA DEFINIRE -->
                 <StackPanel Grid.Row="0" VerticalAlignment="Center" HorizontalAlignment="Center">
-                    <TextBlock Text="BUONGIORNO UN CAZZO" FontSize="22" FontFamily="Bell MT" Foreground="#FF2567D0" ></TextBlock>
+                    <TextBlock Text="Oneeeee-chan" FontSize="22" Style="{StaticResource TextStyle1}" ></TextBlock>
                 </StackPanel>
 
                 <!-- PANNELLO CONTROLLO -->
@@ -84,20 +50,20 @@
 
                     <!-- NUMERO MACCHINA -->
                     <StackPanel Orientation="Horizontal" Height="30" Margin="15,130,0,0">
-                        <TextBlock Text="N° Macchina" Foreground="#FF2865D0" FontSize="20" FontFamily="Bell MT" VerticalAlignment="Center"/>
-                        <TextBox x:Name="txtNumMacchina" Text="C215-011" Foreground="#FF1B1B1C" FontSize="20" FontFamily="Bell MT" Margin="95,0,0,0" MaxWidth="85" MinWidth="85"/>
+                        <TextBlock Text="N° Macchina" Style="{StaticResource TextStyle1}"/>
+                        <TextBox x:Name="txtNumMacchina" Text="C215-011" Style="{StaticResource TextBoxStyle1}" Margin="115,0,0,0" MaxWidth="85" MinWidth="85"/>
                     </StackPanel>
 
                     <!-- IP MACCHINA -->
                     <StackPanel Orientation="Horizontal" VerticalAlignment="Center" Margin="15,0,0,0" >
-                        <TextBlock Text="IP: " FontSize="20" FontFamily="Bell MT" Foreground="#FF275797" VerticalAlignment="Center" HorizontalAlignment="Center" ></TextBlock>
-                        <Label Content="192.168.1.1" x:Name="lblIP" Foreground="#FF2865D0" FontSize="20" FontFamily="Bell MT" VerticalAlignment="Center" Margin="160,0,0,0"/>
+                        <TextBlock Text="IP: " Style="{StaticResource TextStyle1}" />
+                        <Label Content="192.168.1.1" x:Name="lblIP" Style="{StaticResource LabelStyle1}" Margin="180,0,0,0"/>
                     </StackPanel>
 
 
                     <!-- TORNARE INDIETRO -->
                     <StackPanel Orientation="Horizontal" Height="30" VerticalAlignment="Center" Margin="15,0,0,0">
-                        <TextBlock Text="Possibilità di tornare indieto" Foreground="#FF275797" FontSize="20" FontFamily="Bell MT" VerticalAlignment="Center"></TextBlock>
+                        <TextBlock Text="Possibilità di tornare indietro" Style="{StaticResource TextStyle1}" />
                         <CheckBox x:Name="chkTornaIndietro" Margin="40,0,0,0" IsChecked="True" VerticalAlignment="Center" HorizontalAlignment="Center"  />
                     </StackPanel>
 
@@ -107,16 +73,11 @@
 
                 <!--BOTTONE AVVIA QUIZ-->
                 <StackPanel  Grid.Row="2" Margin="91,0,91.056,15" VerticalAlignment="Bottom" HorizontalAlignment="Center" Height="40" Width="158">
-                    <Button x:Name="btnAvviaQuiz">
-                        <!--<Button.Content
-                        <Border CornerRadius="7" BorderThickness="4,4,4,4" Background="#FF0A367C" 
-                        VerticalAlignment="Center" HorizontalAlignment="Center" Height="40" Width="155" >-->
+                    <Button Style="{StaticResource ButtonStyle}" x:Name="btnAvviaQuiz">
                         <StackPanel Orientation="Horizontal" Width="150" HorizontalAlignment="Center" VerticalAlignment="Center" Height="40">
-                            <TextBlock Text="Avvia Quiz" FontSize="22" TextAlignment="Center" Width="116" VerticalAlignment="Center" />
-                            <Image  Source="Resources/icons8-riproduci-512.png" Width="25" Height="25"/>
+                            <TextBlock Text="Avvia Quiz" Style="{StaticResource TextStyleButton}" Width="116"/>
+                            <Image  Source="C:\Users\Mokanu\Source\Repos\QuizMaster\Server\Resources\Images\icons8-riproduci-512.png" Style="{StaticResource IconsDefault}"/>
                         </StackPanel>
-                        <!--</Border>
-                        </Button.Content>-->
                     </Button>
                 </StackPanel>
 
@@ -133,17 +94,15 @@
 
 
         <!-- TERZO DOCK PANEL PER QUIZ EDITOR-->
-        <DockPanel Grid.Column="2" Background="{StaticResource OpaqueBlack}">
+        <DockPanel Grid.Column="2" Background="{StaticResource OpaqueBlack}" Margin="3,0,0,0">
             
             <!--BOTTONE QUIZ EDITOR-->
             <StackPanel Orientation="Horizontal" Margin="0,0,0,15" HorizontalAlignment="Center" VerticalAlignment="Bottom" Height="40">
-                <Button x:Name="btnQuizEditor"  Width="155" >
-                    <!--<Border CornerRadius="7" BorderThickness="4,4,4,4"  VerticalAlignment="Center" HorizontalAlignment="Center" Width="155" Background="#FF14356A" Height="40" >-->
+                <Button Style="{StaticResource ButtonStyle}" x:Name="btnQuizEditor"  Width="155" >
                     <StackPanel Orientation="Horizontal" Width="155" Height="40" VerticalAlignment="Center">
-                        <TextBlock  Text="Quiz Editor" Foreground="White" Margin="5,0,0,0" Width="115" FontSize="22" TextAlignment="Center" FontFamily="Bell MT" VerticalAlignment="Center"/>
-                        <Image Source="Resources/icons8-scorecard-100.png" Width="25" Height="25" />
+                        <TextBlock  Text="Quiz Editor" Style="{StaticResource TextStyleButton}" Margin="13,0,0,0"  />
+                        <Image Source="C:\Users\Mokanu\Source\Repos\QuizMaster\Server\Resources\Images\icons8-scorecard-100.png" Style="{StaticResource IconsDefault}" />
                     </StackPanel>
-                    <!--</Border>-->
                 </Button>
             </StackPanel>
             
