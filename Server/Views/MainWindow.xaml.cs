@@ -20,25 +20,8 @@ namespace QuizMaster___Server {
     /// </summary>
     public partial class MainWindow : Window {
 
-	    private CommunicationsManager manager;
-
         public MainWindow() {
             InitializeComponent();
-			manager = new CommunicationsManager();
-			manager.Start();
         }
-
-		private void AvviaPaginaQuiz(object sender, RoutedEventArgs e) {
-
-			Views.AvviaQuiz avvia_quiz = new Views.AvviaQuiz();
-			avvia_quiz.ShowDialog();
-		
-		}
-
-		private void PaginaQuizEditor(object sender, RoutedEventArgs e) {
-
-			Views.QuizEditor quiz_editor = new Views.QuizEditor();
-			quiz_editor.ShowDialog();
-		}
 	}
 }

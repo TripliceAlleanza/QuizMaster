@@ -46,7 +46,7 @@
 
                 <!-- ANCORA DA DEFINIRE -->
                 <StackPanel Grid.Row="0" VerticalAlignment="Center" HorizontalAlignment="Center">
-                    <TextBlock Text="Oneeeee-chan" FontSize="22" Style="{StaticResource TextStyle1}" ></TextBlock>
+                    <TextBlock Text="お兄ちゃん！！！ありがとう" FontSize="22" Style="{StaticResource TextStyle1}" ></TextBlock>
                 </StackPanel>
 
                 <!-- PANNELLO CONTROLLO -->
@@ -100,7 +100,7 @@
 
                 <!--BOTTONE AVVIA QUIZ-->
                 <StackPanel  Grid.Row="2" Margin="0,0,0,15" Height="40" Width="158" VerticalAlignment="Bottom" HorizontalAlignment="Center">
-                    <Button Style="{StaticResource ButtonStyle}" x:Name="btnAvviaQuiz" Click="AvviaPaginaQuiz" Command="{Binding StartGame}">
+                    <Button Style="{StaticResource ButtonStyle}" x:Name="btnAvviaQuiz" Command="{Binding StartGameCommand}">
                         <StackPanel Orientation="Horizontal" Width="150" HorizontalAlignment="Center" VerticalAlignment="Center" Height="40">
                             <TextBlock Text="Avvia Quiz" Style="{StaticResource TextStyleButton}" Width="116"/>
                             <Image  Source="..\Resources/Images/icons8-riproduci-512.png" Style="{StaticResource IconsDefault}"/>
@@ -125,7 +125,7 @@
 
             <!--BOTTONE QUIZ EDITOR-->
             <StackPanel Orientation="Horizontal" Margin="0,0,0,15" HorizontalAlignment="Center" VerticalAlignment="Bottom" Height="40">
-                <Button Style="{StaticResource ButtonStyle}" x:Name="btnQuizEditor"  Width="155" Click="PaginaQuizEditor" >
+                <Button Style="{StaticResource ButtonStyle}" x:Name="btnQuizEditor"  Width="155">
                     <StackPanel Orientation="Horizontal" Width="155" Height="40" VerticalAlignment="Center">
                         <TextBlock  Text="Quiz Editor" Style="{StaticResource TextStyleButton}" Margin="13,0,0,0"  />
                         <Image Source="..\Resources\Images\icons8-scorecard-100.png" Style="{StaticResource IconsDefault}" />
