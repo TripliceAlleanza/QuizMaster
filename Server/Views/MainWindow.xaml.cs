@@ -27,5 +27,10 @@ namespace QuizMaster___Server {
 			manager = new CommunicationsManager();
 			manager.Start();
         }
-    }
+
+		private void AvviaQuiz(object sender, RoutedEventArgs e) {
+
+			
+		}
+	}
 }
