@@ -47,19 +47,19 @@
 
 
                             <Button Grid.Row="1" Background="Transparent">
-                                <Image  Source="C:\Users\Mokanu\Source\Repos\QuizMaster\Server\Resources\TypeAnswers\icons8-casella-di-controllo-selezionata-50.png"/>
+                                <Image  Source="..\Resources/TypeAnswers/icons8-casella-di-controllo-selezionata-50.png"/>
                             </Button>
 
                             <Button Grid.Row="0" Background="Transparent">
-                                <Image  Grid.Row="0" Source="C:\Users\Mokanu\Source\Repos\QuizMaster\Server\Resources\TypeAnswers\icons8-pulsante-di-opzione-64.png" />
+                                <Image  Grid.Row="0" Source="..\Resources\TypeAnswers\icons8-pulsante-di-opzione-64.png" />
                             </Button>
 
                             <Button Grid.Row="2" Background="Transparent">
-                                <Image  Grid.Row="2" Source="C:\Users\Mokanu\Source\Repos\QuizMaster\Server\Resources\TypeAnswers\icons8-casella-di-testo-filled-100.png"/>
+                                <Image  Grid.Row="2" Source="..\Resources\TypeAnswers\icons8-casella-di-testo-filled-100.png"/>
                             </Button>
 
                             <Button Grid.Row="3" Background="Transparent">
-                                <Image  Grid.Row="3" Source="C:\Users\Mokanu\Source\Repos\QuizMaster\Server\Resources\TypeAnswers\icons8-scambia-filled-100.png" />
+                                <Image  Grid.Row="3" Source="..\Resources\TypeAnswers\icons8-scambia-filled-100.png" />
                             </Button>
                             
 
