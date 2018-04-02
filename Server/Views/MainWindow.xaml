@@ -4,8 +4,13 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:QuizMaster___Server"
+        xmlns:viewmodels="clr-namespace:QuizMaster___Server.ViewModels"
         mc:Ignorable="d"
         Title="QuizMaster" Height="500" Width="1025" Background="White" WindowStartupLocation="CenterScreen">
+
+    <Window.DataContext>
+        <viewmodels:MainWindowViewModel></viewmodels:MainWindowViewModel>
+    </Window.DataContext>
 
 
     <!-- INSERIMETO TABELLA CHE OCCUPA TUTTO IL FORM-->
@@ -60,13 +65,13 @@
                         <!--NUMERO MACCHINA-->
                         <StackPanel Orientation="Horizontal" Height="30" Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Center">
                             <TextBlock Text="N° Macchina" Style="{StaticResource TextStyle1}"/>
-                            <TextBox x:Name="txtNumMacchina" Text="C215-011" Style="{StaticResource TextBoxStyle1}" Margin="115,0,0,0" MaxWidth="85" MinWidth="85"/>
+                            <TextBox x:Name="txtNumMacchine" Text="{Binding NumberOfPCs}" Style="{StaticResource TextBoxStyle1}" Margin="115,0,0,0" MaxWidth="85" MinWidth="85"/>
                         </StackPanel>
 
                         <!-- IP MACCHINA -->
                         <StackPanel Orientation="Horizontal" VerticalAlignment="Center"  Grid.Row="1" HorizontalAlignment="Center" >
                             <TextBlock Text="IP: " Style="{StaticResource TextStyle1}" />
-                            <Label Content="192.168.1.1" x:Name="lblIP" Style="{StaticResource LabelStyle1}" Margin="180,0,0,0"/>
+                            <Label Content="{Binding CurrentIP}" x:Name="lblIP" Style="{StaticResource LabelStyle1}" Margin="180,0,0,0" MinWidth="100"/>
                         </StackPanel>
 
 
@@ -74,7 +79,7 @@
 
                         <StackPanel Orientation="Horizontal" Height="30" VerticalAlignment="Center" Grid.Row="2" HorizontalAlignment="Center">
                             <TextBlock Text="Possibilità di tornare indietro" Style="{StaticResource TextStyle1}" />
-                            <CheckBox x:Name="chkTornaIndietro" Margin="40,0,0,0" IsChecked="True" VerticalAlignment="Center" HorizontalAlignment="Center"  />
+                            <CheckBox x:Name="chkTornaIndietro" Margin="40,0,0,8" VerticalAlignment="Bottom" HorizontalAlignment="Center" IsChecked="{Binding AllowReturn}"  />
                         </StackPanel>
 
                         <!--OPZIONE DI RISERVA-->
@@ -95,7 +100,7 @@
 
                 <!--BOTTONE AVVIA QUIZ-->
                 <StackPanel  Grid.Row="2" Margin="0,0,0,15" Height="40" Width="158" VerticalAlignment="Bottom" HorizontalAlignment="Center">
-                    <Button Style="{StaticResource ButtonStyle}" x:Name="btnAvviaQuiz" Click="AvviaPaginaQuiz">
+                    <Button Style="{StaticResource ButtonStyle}" x:Name="btnAvviaQuiz" Click="AvviaPaginaQuiz" Command="{Binding StartGame}">
                         <StackPanel Orientation="Horizontal" Width="150" HorizontalAlignment="Center" VerticalAlignment="Center" Height="40">
                             <TextBlock Text="Avvia Quiz" Style="{StaticResource TextStyleButton}" Width="116"/>
                             <Image  Source="..\Resources/Images/icons8-riproduci-512.png" Style="{StaticResource IconsDefault}"/>
