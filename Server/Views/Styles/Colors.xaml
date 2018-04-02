@@ -3,5 +3,6 @@
                     xmlns:local="clr-namespace:QuizMaster___Server.Styles">
 
     <SolidColorBrush x:Key="OpaqueBlack">#343434</SolidColorBrush>
+    <SolidColorBrush x:Key="SolidBlack">#FF222121</SolidColorBrush>
 
 </ResourceDictionary>

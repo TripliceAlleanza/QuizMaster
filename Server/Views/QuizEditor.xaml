@@ -1,0 +1,84 @@
+﻿<Window x:Class="QuizMaster___Server.Views.QuizEditor"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:QuizMaster___Server.Views"
+        mc:Ignorable="d"
+        Title="QuizEditor" Height="500" Width="1025" Background="White" WindowStartupLocation="CenterScreen">
+
+    <Grid>
+
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"></RowDefinition>
+            <RowDefinition Height="5*"></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <DockPanel Grid.Row="0" Background="{StaticResource OpaqueBlack}">
+
+            <StackPanel Orientation="Horizontal" Width="1020" Background="#FF222121" Margin="0,0,0,-0.577" HorizontalAlignment="Left">
+
+                <TextBlock Text="Inserisci domanda: " Style="{StaticResource TextStyle1}" FontSize="24" Margin="25,0,0,0" />
+                <TextBox Height="50" Width="500" Style="{StaticResource TextBoxStyle1 }" Margin="20,0,0,0"></TextBox>
+                <Button FontSize="24" Height="50" Width="160" Style="{StaticResource ButtonStyle}" Content="Inserisci" HorizontalAlignment="Center" Margin="30,0,0,0" />
+            </StackPanel>
+
+        </DockPanel>
+
+        <DockPanel Grid.Row="1" Background="{StaticResource OpaqueBlack}">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"></ColumnDefinition>
+                    <ColumnDefinition Width="13*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+
+                <DockPanel Grid.Column="0" >
+
+                    <StackPanel Orientation="Vertical" Background="{StaticResource SolidBlack}" Height="320">
+
+                        <Grid VerticalAlignment="Bottom" Height="319">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="1*"></RowDefinition>
+                                <RowDefinition Height="1*"></RowDefinition>
+                                <RowDefinition Height="1*"></RowDefinition>
+                                <RowDefinition Height="1*"></RowDefinition>
+                            </Grid.RowDefinitions>
+
+
+                            <Button Grid.Row="1" Background="Transparent">
+                                <Image  Source="C:\Users\Mokanu\Source\Repos\QuizMaster\Server\Resources\TypeAnswers\icons8-casella-di-controllo-selezionata-50.png"/>
+                            </Button>
+
+                            <Button Grid.Row="0" Background="Transparent">
+                                <Image  Grid.Row="0" Source="C:\Users\Mokanu\Source\Repos\QuizMaster\Server\Resources\TypeAnswers\icons8-pulsante-di-opzione-64.png" />
+                            </Button>
+
+                            <Button Grid.Row="2" Background="Transparent">
+                                <Image  Grid.Row="2" Source="C:\Users\Mokanu\Source\Repos\QuizMaster\Server\Resources\TypeAnswers\icons8-casella-di-testo-filled-100.png"/>
+                            </Button>
+
+                            <Button Grid.Row="3" Background="Transparent">
+                                <Image  Grid.Row="3" Source="C:\Users\Mokanu\Source\Repos\QuizMaster\Server\Resources\TypeAnswers\icons8-scambia-filled-100.png" />
+                            </Button>
+                            
+
+                        </Grid>
+
+
+
+                    </StackPanel>
+                </DockPanel>
+
+
+                <DockPanel Grid.Column="1">
+
+                </DockPanel>
+
+
+            </Grid>
+        </DockPanel>
+
+
+    </Grid>
+</Window>

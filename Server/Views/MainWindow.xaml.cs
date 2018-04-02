@@ -28,9 +28,17 @@ namespace QuizMaster___Server {
 			manager.Start();
         }
 
-		private void AvviaQuiz(object sender, RoutedEventArgs e) {
+		private void AvviaPaginaQuiz(object sender, RoutedEventArgs e) {
 
-			
+			Views.AvviaQuiz avvia_quiz = new Views.AvviaQuiz();
+			avvia_quiz.ShowDialog();
+		
+		}
+
+		private void PaginaQuizEditor(object sender, RoutedEventArgs e) {
+
+			Views.QuizEditor quiz_editor = new Views.QuizEditor();
+			quiz_editor.ShowDialog();
 		}
 	}
 }
