@@ -35,7 +35,7 @@
 
                 <DockPanel Grid.Column="0" >
 
-                    <StackPanel Orientation="Vertical" Background="{StaticResource SolidBlack}" Height="320">
+                    <DockPanel Background="{StaticResource SolidBlack}" Height="320">
 
                         <Grid VerticalAlignment="Bottom" Height="319">
                             <Grid.RowDefinitions>
@@ -46,15 +46,17 @@
                             </Grid.RowDefinitions>
 
 
-                            <Button Grid.Row="1" Background="Transparent">
+                            <Button  Grid.Row="1" Background="Transparent">
                                 <Image  Source="..\Resources/TypeAnswers/icons8-casella-di-controllo-selezionata-50.png"/>
                             </Button>
 
-                            <Button Grid.Row="0" Background="Transparent">
-                                <Image  Grid.Row="0" Source="..\Resources\TypeAnswers\icons8-pulsante-di-opzione-64.png" />
+                            <Button  Grid.Row="0" Background="Transparent">
+                                <StackPanel>
+                                    <Image  Grid.Row="0" Source="..\Resources\TypeAnswers\icons8-pulsante-di-opzione-64.png" />
+                                </StackPanel>
                             </Button>
 
-                            <Button Grid.Row="2" Background="Transparent">
+                            <Button  Grid.Row="2" Background="Transparent">
                                 <Image  Grid.Row="2" Source="..\Resources\TypeAnswers\icons8-casella-di-testo-filled-100.png"/>
                             </Button>
 
@@ -67,7 +69,7 @@
 
 
 
-                    </StackPanel>
+                    </DockPanel>
                 </DockPanel>
 
 

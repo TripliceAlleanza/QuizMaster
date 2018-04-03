@@ -15,6 +15,7 @@
                 <ResourceDictionary Source="Views/Styles/TextBlockButtons.xaml" />
                 <ResourceDictionary Source="Views/Styles/Label.xaml" />
                 <ResourceDictionary Source="Views/Styles/TextBoxStyle.xaml" />
+                <ResourceDictionary Source="Views/Styles/ButtonTypeAnswer.xaml" />
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Application.Resources>
