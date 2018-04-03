@@ -39,18 +39,18 @@
 
                 <!-- DEFINIZIONE DI TRE RIGHE -->
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="80*"></RowDefinition>
-                    <RowDefinition Height="319*"></RowDefinition>
-                    <RowDefinition Height="73*"></RowDefinition>
+                    <RowDefinition Height="154*"></RowDefinition>
+                    <RowDefinition Height="239*"></RowDefinition>
+                    <RowDefinition Height="79*"></RowDefinition>
                 </Grid.RowDefinitions>
 
                 <!-- ANCORA DA DEFINIRE -->
-                <StackPanel Grid.Row="0" VerticalAlignment="Center" HorizontalAlignment="Center">
+                <StackPanel Grid.Row="0" VerticalAlignment="Center" HorizontalAlignment="Center" Height="26" Margin="50,62,50.028,66.141" Width="238">
                     <TextBlock Text="お兄ちゃん！！！ありがとう" FontSize="22" Style="{StaticResource TextStyle1}" ></TextBlock>
                 </StackPanel>
 
                 <!-- PANNELLO CONTROLLO -->
-                <DockPanel  Background="#FF222121" Grid.Row="1" Margin="0,0.225,0.028,72.887" Grid.RowSpan="2">
+                <DockPanel  Background="#FF222121" Grid.Row="1" Margin="0,0.859,0.028,78.887" Grid.RowSpan="2">
 
 
                     <Grid>
@@ -63,13 +63,13 @@
                         </Grid.RowDefinitions>
 
                         <!--NUMERO MACCHINA-->
-                        <StackPanel Orientation="Horizontal" Height="30" Grid.Row="0" HorizontalAlignment="Center" VerticalAlignment="Center">
+                        <StackPanel Orientation="Horizontal" Height="30" Grid.Row="1" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="10,0,0,0">
                             <TextBlock Text="N° Macchina" Style="{StaticResource TextStyle1}"/>
                             <TextBox x:Name="txtNumMacchine" Text="{Binding NumberOfPCs}" Style="{StaticResource TextBoxStyle1}" Margin="115,0,0,0" MaxWidth="85" MinWidth="85"/>
                         </StackPanel>
 
                         <!-- IP MACCHINA -->
-                        <StackPanel Orientation="Horizontal" VerticalAlignment="Center"  Grid.Row="1" HorizontalAlignment="Center" >
+                        <StackPanel Orientation="Horizontal" VerticalAlignment="Center"  Grid.Row="2" HorizontalAlignment="Left" Margin="10,0,0,0" >
                             <TextBlock Text="IP: " Style="{StaticResource TextStyle1}" />
                             <Label Content="{Binding CurrentIP}" x:Name="lblIP" Style="{StaticResource LabelStyle1}" Margin="180,0,0,0" MinWidth="100"/>
                         </StackPanel>
@@ -77,19 +77,19 @@
 
                         <!-- TORNARE INDIETRO -->
 
-                        <StackPanel Orientation="Horizontal" Height="30" VerticalAlignment="Center" Grid.Row="2" HorizontalAlignment="Center">
+                        <StackPanel Orientation="Horizontal" Height="30" VerticalAlignment="Top" Grid.Row="3" HorizontalAlignment="Left" Margin="10,0,0,0">
                             <TextBlock Text="Possibilità di tornare indietro" Style="{StaticResource TextStyle1}" />
-                            <CheckBox x:Name="chkTornaIndietro" Margin="40,0,0,8" VerticalAlignment="Bottom" HorizontalAlignment="Center" IsChecked="{Binding AllowReturn}"  />
+                            <CheckBox x:Name="chkTornaIndietro" Margin="35,0,0,8" VerticalAlignment="Bottom" HorizontalAlignment="Right" IsChecked="{Binding AllowReturn}"  />
                         </StackPanel>
 
                         <!--SCELTA QUIZ -->
-                        <StackPanel Orientation="Horizontal" Height="30" Grid.Row="3" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="10,0,0,0">
+                        <StackPanel Orientation="Horizontal" Height="30" Grid.Row="0" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="10,0,0,0">
                             <TextBlock Text="Scegli quiz: " Style="{StaticResource TextStyle1}" HorizontalAlignment="Left" VerticalAlignment="Center"/>
-                            <ComboBox Margin="57,0,0,0" Width="150" />
+                            <ComboBox Margin="20,0,0,0" Width="190" />
                         </StackPanel>
 
                         <!--OPZIONE DI RISERVA-->
-                        <StackPanel Orientation="Horizontal" Height="30" Grid.Row="4" HorizontalAlignment="Center" VerticalAlignment="Center">
+                        <StackPanel Orientation="Horizontal" Height="30" Grid.Row="4" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="10,0,0,0">
                             <TextBlock Text="Opzione di riserva" Style="{StaticResource TextStyle1}"/>
                         </StackPanel>
 
@@ -100,7 +100,7 @@
 
 
                 <!--BOTTONE AVVIA QUIZ-->
-                <StackPanel  Grid.Row="2" Margin="0,0,0,15" Height="40" Width="158" VerticalAlignment="Bottom" HorizontalAlignment="Center">
+                <StackPanel  Grid.Row="2" Margin="90,0,90.028,14.887" Height="40" Width="158" VerticalAlignment="Bottom" HorizontalAlignment="Center">
                     <Button Style="{StaticResource ButtonStyle}" x:Name="btnAvviaQuiz" Command="{Binding StartGameCommand}">
                         <StackPanel Orientation="Horizontal" Width="150" HorizontalAlignment="Center" VerticalAlignment="Center" Height="40">
                             <TextBlock Text="Avvia Quiz" Style="{StaticResource TextStyleButton}" Width="116"/>
@@ -115,9 +115,41 @@
 
         <!-- SECONDO DOCK_PANEL PER LA LIST_BOX -->
         <DockPanel Background="{StaticResource OpaqueBlack}"  Grid.Column="1">
-            <ListBox x:Name="lstListaQuiz" Height="472" Margin="0,0,0,-0.114"  UseLayoutRounding="False" Background="#343434">
-                <ListBoxItem Content="QUI CI ANDRANNO I QUIZ FATTI" Height="30" FontSize="22" Foreground="White"/>
-            </ListBox>
+
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="1*"></RowDefinition>
+                    <RowDefinition Height="7*"></RowDefinition>
+                </Grid.RowDefinitions>
+
+
+                <ListBox Grid.Row="1" x:Name="lstListaQuiz" Margin="0,0.001,0,79.998"  UseLayoutRounding="False" Background="#343434" VerticalAlignment="Top" Height="390">
+                    <ListBoxItem Content="QUI CI ANDRANNO I QUIZ FATTI" Height="30" FontSize="22" Foreground="White"/>
+                </ListBox>
+
+                <DockPanel Grid.Row="0" Background="{StaticResource SolidBlack}">
+                    <Grid Margin="0,0,0,-0.394">
+                        <Grid.RowDefinitions>
+                            <RowDefinition></RowDefinition>
+                            <RowDefinition></RowDefinition>
+
+                        </Grid.RowDefinitions>
+
+                        <StackPanel Grid.Row="0" Orientation="Horizontal">
+                            <TextBlock Style="{StaticResource TextStyle1}" FontSize="18" Text="Numero di quiz aggiunti: " HorizontalAlignment="Left" Margin="5,0,0,0"/>
+                            <TextBlock Style="{StaticResource TextStyle1}" FontSize="18" Text="69" HorizontalAlignment="Stretch" Margin="40,0,0,0" />
+                        </StackPanel>
+
+                        <StackPanel Grid.Row="1" Orientation="Horizontal">
+                            <TextBlock Style="{StaticResource TextStyle1}" FontSize="18" Text="Ultimo quiz aggiunto: " Margin="5,0,0,0" />
+                            <TextBlock Style="{StaticResource TextStyle1}" FontSize="18" Text="La madonnina" Margin="10,0,0,0" />
+                        </StackPanel>
+                    </Grid>
+                </DockPanel>
+                
+            </Grid>
+            
+            
         </DockPanel>
 
 
