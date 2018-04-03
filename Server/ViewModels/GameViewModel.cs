@@ -10,6 +10,7 @@ using Newtonsoft.Json.Linq;
 using QuizMaster___Server.Models;
 using static System.Diagnostics.Debug;
 using QuizMaster___Server.Networking;
+using QuizMaster___Server.Support;
 
 namespace QuizMaster___Server.ViewModels {
 
@@ -28,8 +29,13 @@ namespace QuizMaster___Server.ViewModels {
 
 		public GameViewModel(IOptionsViewModel optionsViewModel) {
 			this.optionsViewModel = optionsViewModel;
+			Clients = new ObservableCollection<Client>();
 			communicationsManager = new CommunicationsManager();
+
+
 			communicationsManager.MessageReceived += CommunicationsManagerOnMessageReceived;
+
+			communicationsManager.Start();
 		}
 
 		private void CommunicationsManagerOnMessageReceived(IPAddress clientIP, string message) {
@@ -42,9 +48,17 @@ namespace QuizMaster___Server.ViewModels {
 
 		private void ParseJSONCommand(Client client, string command, JObject data) {
 			if (command == "connect") {
-				WriteLine($"{client.IPAddress} sending command {command} and data {data}");
+				ConnectClient(client, data);
 			}
 		}
 
+		private void ConnectClient(Client client, JObject data) {
+			client.Name = data.Value<string>("name");
+			client.Surname = data.Value<string>("surname");
+			client.Class = data.Value<string>("class");
+			client.ClientState =
+				(ClientState) Enum.Parse(typeof(ClientState), data.Value<string>("state").CapitalizeFirstLetter());
+			Clients.Add(client);
+		}
 	}
 }

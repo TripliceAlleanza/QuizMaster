@@ -82,7 +82,8 @@ namespace QuizMaster___Server.Networking {
 		    while (listenThread.ThreadState != ThreadState.AbortRequested) {
 			    Socket client = listener.AcceptSocket();
 			    var task = new Task(() => {
-				    MessageReceived?.Invoke(null, ReceiveJson(client));
+				    string message = ReceiveJson(client);
+					MessageReceived?.Invoke((client.LocalEndPoint as IPEndPoint).Address, message);
 			    });
 			    task.Start();
 		    }

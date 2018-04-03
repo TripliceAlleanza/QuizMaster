@@ -6,13 +6,13 @@ using System.Threading.Tasks;
 using QuizMaster___Server.Views;
 
 namespace QuizMaster___Server.ViewModels {
-	interface IOptionsViewModel {
+	public interface IOptionsViewModel {
 		bool AllowReturn { get;}
 		string CurrentIP { get; }
 		int NumberOfPCs { get; }
 	}
 
-	class MainWindowViewModel : IOptionsViewModel {
+	public class MainWindowViewModel : IOptionsViewModel {
 		public bool AllowReturn { get; set; }
 		public string CurrentIP { get; private set; }
 		public int NumberOfPCs { get; set; }
@@ -35,7 +35,7 @@ namespace QuizMaster___Server.ViewModels {
 		}
 
 		private void StartGameMethod(object obj) {
-			var quiz = new AvviaQuiz();
+			var quiz = new GameWindow(this);
 			quiz.Show();
 		}
 	}

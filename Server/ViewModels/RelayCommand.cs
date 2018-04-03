@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using System.Windows.Input;
 
 namespace QuizMaster___Server.ViewModels {
-	class RelayCommand : ICommand {
+	public class RelayCommand : ICommand {
 		public event EventHandler CanExecuteChanged;
 
 		private Predicate<object> canExecuteMethod;
