@@ -22,7 +22,7 @@ namespace QuizMaster___Server.Networking {
 
 		/// <param name="client">The tcpClient from which the connection is received</param>
 		/// <param name="message">The message (usually a message)</param>
-	    public delegate void MessageReceivedEventArgs(Client client, string message);
+	    public delegate void MessageReceivedEventArgs(IPAddress client, string message);
 
 		/// <summary>
 		/// Raised when a message is received from a tcpClient
@@ -57,8 +57,8 @@ namespace QuizMaster___Server.Networking {
 		/// </summary>
 		/// <param name="client">Client to send data to</param>
 		/// <param name="data">the JSON-formatted data you want to send</param>
-	    public async Task SendData(Client client, string data) {
-			await tcpClient.ConnectAsync(client.IPAddress, SERVER_PORT);
+	    public async Task SendData(IPAddress client, string data) {
+			await tcpClient.ConnectAsync(client, SERVER_PORT);
 		    var stream = tcpClient.GetStream();
 		    var bytes = Encoding.UTF8.GetBytes(data);
 			stream.Write(bytes,0, bytes.Length);
@@ -70,7 +70,7 @@ namespace QuizMaster___Server.Networking {
 		///<param name="client">Client to send data to</param>
 		/// <param name="data">the JSON-formatted data you want to send</param>
 		/// <returns>The JSON-formatted response</returns>
-		public async Task<string> GetResponse(Client client, string data) {
+		public async Task<string> GetResponse(IPAddress client, string data) {
 		    await SendData(client, data);
 		    return ReceiveJson(tcpClient.Client);
 	    }
