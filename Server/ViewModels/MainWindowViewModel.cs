@@ -6,13 +6,13 @@ using System.Threading.Tasks;
 using QuizMaster___Server.Views;
 
 namespace QuizMaster___Server.ViewModels {
-	interface IMainWindowViewModel {
+	interface IOptionsViewModel {
 		bool AllowReturn { get;}
 		string CurrentIP { get; }
 		int NumberOfPCs { get; }
 	}
 
-	class MainWindowViewModel : IMainWindowViewModel {
+	class MainWindowViewModel : IOptionsViewModel {
 		public bool AllowReturn { get; set; }
 		public string CurrentIP { get; private set; }
 		public int NumberOfPCs { get; set; }

@@ -7,6 +7,7 @@ using System.Net.Sockets;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
+using QuizMaster___Server.Models;
 using ThreadState = System.Threading.ThreadState;
 
 namespace QuizMaster___Server.Networking {

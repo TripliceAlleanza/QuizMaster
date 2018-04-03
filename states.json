@@ -1,6 +1,7 @@
 {
 
   // connessione al server c->s
+
   "connect": {
     "name": "Edoardo",
     "surname": "Fullin",

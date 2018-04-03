@@ -64,6 +64,7 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Networking\Networking.cs" />
+    <Compile Include="ViewModels\GameViewModel.cs" />
     <Compile Include="ViewModels\RelayCommand.cs" />
     <Compile Include="ViewModels\MainWindowViewModel.cs" />
     <Compile Include="Views\AvviaQuiz.xaml.cs">
@@ -133,7 +134,7 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Networking\Client.cs" />
+    <Compile Include="Models\Client.cs" />
     <Compile Include="Networking\CommunicationsManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
@@ -191,6 +192,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="PuzzleEditor\" />
+    <Folder Include="UML\" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\Images\icons8-puzzle-500.png" />
