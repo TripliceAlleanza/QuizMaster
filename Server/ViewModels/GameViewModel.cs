@@ -32,7 +32,6 @@ namespace QuizMaster___Server.ViewModels {
 			Clients = new ObservableCollection<Client>();
 			communicationsManager = new CommunicationsManager();
 
-
 			communicationsManager.MessageReceived += CommunicationsManagerOnMessageReceived;
 
 			communicationsManager.Start();
@@ -58,7 +57,8 @@ namespace QuizMaster___Server.ViewModels {
 			client.Class = data.Value<string>("class");
 			client.ClientState =
 				(ClientState) Enum.Parse(typeof(ClientState), data.Value<string>("state").CapitalizeFirstLetter());
-			Clients.Add(client);
+
+			App.Current.Dispatcher.Invoke(() => Clients.Add(client));
 		}
 	}
 }

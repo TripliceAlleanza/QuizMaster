@@ -17,5 +17,6 @@ namespace QuizMaster___Server.Models {
 		public string Class { get; set; }
 		public ClientState ClientState { get; set; }
 
+		public string NameAndState => $"{Name} {Surname} - {ClientState}";
 	}
 }

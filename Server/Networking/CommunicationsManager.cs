@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.IO;
 using System.Linq;
 using System.Net;
 using System.Net.Sockets;
@@ -8,6 +9,7 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using QuizMaster___Server.Models;
+using QuizMaster___Server.Support;
 using ThreadState = System.Threading.ThreadState;
 
 namespace QuizMaster___Server.Networking {
@@ -72,7 +74,7 @@ namespace QuizMaster___Server.Networking {
 		/// <returns>The JSON-formatted response</returns>
 		public async Task<string> GetResponse(IPAddress client, string data) {
 		    await SendData(client, data);
-		    return ReceiveJson(tcpClient.Client);
+		    return ReceiveJson(tcpClient);
 	    }
 
 
@@ -80,10 +82,11 @@ namespace QuizMaster___Server.Networking {
 		    listener.Start();
 
 		    while (listenThread.ThreadState != ThreadState.AbortRequested) {
-			    Socket client = listener.AcceptSocket();
-			    var task = new Task(() => {
-				    string message = ReceiveJson(client);
-					MessageReceived?.Invoke((client.LocalEndPoint as IPEndPoint).Address, message);
+			    var client = listener.AcceptTcpClient();
+			    string message = ReceiveJson(client);
+			    if (string.IsNullOrEmpty(message)) Debugger.Break();
+				var task = new Task(() => {			    
+					MessageReceived?.Invoke((client.Client.LocalEndPoint as IPEndPoint).Address, message);
 			    });
 			    task.Start();
 		    }
@@ -91,19 +94,15 @@ namespace QuizMaster___Server.Networking {
 		    listener.Stop();
 	    }
 
-	    private string ReceiveJson(Socket socket) {
-		    var buffer = new List<byte>();
-
-		    while (socket.Available > 0) {
-			    var currByte = new Byte[1];
-			    var byteCounter = socket.Receive(currByte, currByte.Length, SocketFlags.None);
-
-			    if (byteCounter.Equals(1)) {
-				    buffer.Add(currByte[0]);
-			    }
+	    private string ReceiveJson(TcpClient tcpClient) {
+			var stream = tcpClient.GetStream();
+		    if (tcpClient.ReceiveBufferSize > 0) {
+			    var bytes = new byte[tcpClient.ReceiveBufferSize];
+			    stream.Read(bytes, 0, tcpClient.ReceiveBufferSize);
+			    return Encoding.UTF8.GetString(bytes);
 		    }
 
-		    return Encoding.UTF8.GetString(buffer.ToArray());
+		    return "";
 	    }
 
 	}

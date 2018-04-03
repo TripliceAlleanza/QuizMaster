@@ -6,9 +6,15 @@
         xmlns:local="clr-namespace:QuizMaster___Server.Views"
         xmlns:viewmodels="clr-namespace:QuizMaster___Server.ViewModels"
         mc:Ignorable="d"
-        Title="GameWindow" Height="300" Width="300">
+        Title="GameWindow" Height="550" Width="600">
 
     <Grid>
-        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"></ColumnDefinition>
+            <ColumnDefinition Width="1*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+
+        <ListBox Grid.Column="0" HorizontalAlignment="Left" VerticalAlignment="Top" ItemsSource="{Binding Clients}" DisplayMemberPath="NameAndState"/>
+
     </Grid>
 </Window>

@@ -9,7 +9,7 @@
         Title="QuizMaster" Height="500" Width="1025" Background="White" WindowStartupLocation="CenterScreen">
 
     <Window.DataContext>
-        <viewmodels:MainWindowViewModel></viewmodels:MainWindowViewModel>
+        <viewmodels:MainWindowViewModel/>
     </Window.DataContext>
 
 
@@ -25,7 +25,7 @@
 
         <!-- DEFINIZIONE TRE COLONNE-->
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="1*"></ColumnDefinition>
+            <ColumnDefinition Width="1*"/>
             <ColumnDefinition Width="1*"/>
             <ColumnDefinition Width="1*"/>
         </Grid.ColumnDefinitions>
