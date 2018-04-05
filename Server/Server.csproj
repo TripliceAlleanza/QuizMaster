@@ -97,42 +97,6 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\Styles\Borders.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Views\Styles\Buttons.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Views\Styles\ButtonTypeAnswer.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Views\Styles\Colors.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Views\Styles\Icons.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Views\Styles\Label.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Views\Styles\TextBlockButtons.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Views\Styles\TextBlockStyle1.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Views\Styles\TextBoxStyle.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="Views\TestState.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -190,14 +154,17 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\SharedLibrary\SharedLibrary.csproj">
+    <ProjectReference Include="..\Commons.Styling\Commons.Styling.csproj">
+      <Project>{83ae2eaf-9d37-4fa7-a9e0-44e0a859b5bc}</Project>
+      <Name>Commons.Styling</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SharedLibrary\Commons.SharedLibrary.csproj">
       <Project>{46dc2a0b-286a-4be0-bdfe-bd362e6d604d}</Project>
-      <Name>SharedLibrary</Name>
+      <Name>Commons.SharedLibrary</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="PuzzleEditor\" />
-    <Folder Include="UML\" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\Images\icons8-puzzle-500.png" />

@@ -7,15 +7,7 @@
     <Application.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
-                <ResourceDictionary Source="Views/Styles/Colors.xaml"/>
-                <ResourceDictionary Source="Views/Styles/Buttons.xaml"/>
-                <ResourceDictionary Source="Views/Styles/Icons.xaml"/>
-                <ResourceDictionary Source="Views/Styles/Borders.xaml"/>
-                <ResourceDictionary Source="Views/Styles/TextBlockStyle1.xaml" />
-                <ResourceDictionary Source="Views/Styles/TextBlockButtons.xaml" />
-                <ResourceDictionary Source="Views/Styles/Label.xaml" />
-                <ResourceDictionary Source="Views/Styles/TextBoxStyle.xaml" />
-                <ResourceDictionary Source="Views/Styles/ButtonTypeAnswer.xaml" />
+                <ResourceDictionary Source="/Commons.Styling;component/QuizMasterDesign.xaml"/>
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Application.Resources>
