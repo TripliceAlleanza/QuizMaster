@@ -4,5 +4,7 @@
 
     <SolidColorBrush x:Key="OpaqueBlack">#343434</SolidColorBrush>
     <SolidColorBrush x:Key="SolidBlack">#FF222121</SolidColorBrush>
-
+    <SolidColorBrush x:Key="RedClient">#FF6F0000</SolidColorBrush>
+    <SolidColorBrush x:Key="BackgroundClientDockPanel">#FFBBCDD4</SolidColorBrush>
+    <SolidColorBrush x:Key="GreenSperanza">#FF1F6D15</SolidColorBrush>
 </ResourceDictionary>

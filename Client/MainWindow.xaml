@@ -5,19 +5,45 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:QuizMaster___Client"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
+        Title="MainWindow" Height="350" Width="600">
     <Grid>
 
         <Grid.RowDefinitions>
             <RowDefinition Height="1*"/>
             <RowDefinition Height="2*" />
-            
-            
+
+
         </Grid.RowDefinitions>
 
         <DockPanel Grid.Row="0" >
-            <Label Content="PORCCO" Height="50" Width="150" Style="{StaticResource }"/>
+            <Label Content="Kalisa_pearl" HorizontalContentAlignment="Center" Height="50" Width="150" FontSize="24" Style="{StaticResource LabelStyle1}" HorizontalAlignment="Center"/>
         </DockPanel>
-        
+
+        <DockPanel Grid.Row="1">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="2*"></RowDefinition>
+                    <RowDefinition Height="1*"></RowDefinition>
+                </Grid.RowDefinitions>
+
+                <DockPanel Background="{StaticResource BackgroundClientDockPanel}" Grid.Row="0" HorizontalAlignment="Center">
+
+                    
+                        <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="0">
+                        <TextBlock Text="Nome: " Style="{StaticResource TextStyle1}" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="10,0,0,0" />
+                        <TextBox Style="{StaticResource TextBoxStyle1}" Width="130" Margin="20,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                    </StackPanel>
+
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="25,0,10,0">
+                        <TextBlock Text="Cognome: " Style="{StaticResource TextStyle1}" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="10,0,0,0" />
+                        <TextBox Style="{StaticResource TextBoxStyle1}" Width="130" Margin="20,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                    </StackPanel>
+                    
+                </DockPanel>
+
+                <Button Grid.Row="1" Style="{StaticResource ButtonStyle}" Background="{StaticResource GreenSperanza}" Width="150" FontSize="22">AVVIA QUIZ</Button>
+            </Grid>
+        </DockPanel>
+
     </Grid>
 </Window>
