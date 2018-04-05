@@ -1,6 +1,6 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-                    xmlns:local="clr-namespace:Commons.Styling">
+                    xmlns:controls="clr-namespace:Server;assembly=Server">
 
     <ResourceDictionary.MergedDictionaries>
         <ResourceDictionary Source="Styles/Colors.xaml"/>
