@@ -58,7 +58,7 @@ namespace QuizMaster___Server.ViewModels {
 			client.ClientState =
 				(ClientState) Enum.Parse(typeof(ClientState), data.Value<string>("state").CapitalizeFirstLetter());
 
-			App.Current.Dispatcher.Invoke(() => Clients.Add(client));
+			App.Current.Dispatcher.Invoke(() => Clients.Add(client));	
 		}
 	}
 }

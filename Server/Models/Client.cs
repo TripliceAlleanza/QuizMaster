@@ -11,6 +11,7 @@ namespace QuizMaster___Server.Models {
 		Waiting, Testing, Finished
 	}
 	public class Client {
+		public int Id { get; set; }
 		public IPAddress IPAddress { get; set; }
 		public string Name { get; set; }
 		public string Surname { get; set; }
