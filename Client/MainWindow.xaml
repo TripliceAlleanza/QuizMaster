@@ -6,6 +6,24 @@
         xmlns:local="clr-namespace:QuizMaster___Client"
         mc:Ignorable="d"
         Title="MainWindow" Height="350" Width="600">
+
+    <Window.Resources>
+        <Storyboard x:Key="WindowLoad"/>
+    </Window.Resources>
+    <Window.Triggers>
+
+        <EventTrigger RoutedEvent="Window.Loaded" >
+
+            <EventTrigger.Actions>
+                <BeginStoryboard>
+                    <Storyboard>
+                        <ColorAnimation Storyboard.TargetName="Change" Storyboard.TargetProperty="(SolidColorBrush.Color)" From="Red" To="Green" AutoReverse="false" Duration="0:0:0.4"  />
+                    </Storyboard>
+                </BeginStoryboard>
+            </EventTrigger.Actions>
+        </EventTrigger>
+    </Window.Triggers>
+
     <Grid>
 
         <Grid.RowDefinitions>
@@ -28,8 +46,8 @@
 
                 <DockPanel Background="{StaticResource BackgroundClientDockPanel}" Grid.Row="0" HorizontalAlignment="Center">
 
-                    
-                        <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="0">
+
+                    <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="0">
                         <TextBlock Text="Nome: " Style="{StaticResource TextStyle1}" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="10,0,0,0" />
                         <TextBox Style="{StaticResource TextBoxStyle1}" Width="130" Margin="20,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Center"/>
                     </StackPanel>
@@ -38,10 +56,18 @@
                         <TextBlock Text="Cognome: " Style="{StaticResource TextStyle1}" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="10,0,0,0" />
                         <TextBox Style="{StaticResource TextBoxStyle1}" Width="130" Margin="20,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Center"/>
                     </StackPanel>
-                    
+
                 </DockPanel>
 
-                <Button Grid.Row="1" Style="{StaticResource ButtonStyle}" Background="{StaticResource GreenSperanza}" Width="150" FontSize="22">AVVIA QUIZ</Button>
+                
+                    
+
+                <Button x:Name="Avvia" Grid.Row="1" Style="{StaticResource ButtonStyle}"  Width="150" FontSize="22">AVVIA QUIZ
+
+                    <Button.Background>
+                        <SolidColorBrush  x:Name="Change" Color="Red"/>
+                    </Button.Background>
+                </Button>
             </Grid>
         </DockPanel>
 
