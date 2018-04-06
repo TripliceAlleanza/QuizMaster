@@ -65,7 +65,7 @@
                                                         From="#FF6F0000"
                                                         To="#FF1F6D15"
                                                         AutoReverse="false"
-                                                        Duration="0:0:0.2"  />
+                                                        Duration="0:0:0.15"  />
                                     </Storyboard>
                                 </BeginStoryboard>
                             </EventTrigger.Actions>
@@ -82,7 +82,7 @@
                                                         From="#FF1F6D15"
                                                         To="#FF6F0000"
                                                         AutoReverse="false"
-                                                        Duration="0:0:0.2"  />
+                                                        Duration="0:0:0.3"  />
                                     </Storyboard>
                                 </BeginStoryboard>
                             </EventTrigger.Actions>
