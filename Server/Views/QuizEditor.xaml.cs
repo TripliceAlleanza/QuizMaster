@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using System.Windows.Media.Animation;
 
 namespace QuizMaster___Server.Views
 {
@@ -19,9 +20,16 @@ namespace QuizMaster___Server.Views
     /// </summary>
     public partial class QuizEditor : Window
     {
-        public QuizEditor()
+
+
+		public QuizEditor()
         {
             InitializeComponent();
-        }
-    }
+
+		
+
+		}
+
+		
+	}
 }

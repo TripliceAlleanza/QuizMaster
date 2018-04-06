@@ -30,14 +30,14 @@
             <Grid>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="1*"></ColumnDefinition>
-                    <ColumnDefinition Width="13*"></ColumnDefinition>
+                    <ColumnDefinition Width="17*"></ColumnDefinition>
                 </Grid.ColumnDefinitions>
 
                 <DockPanel Grid.Column="0" >
 
-                    <DockPanel Background="{StaticResource SolidBlack}" Height="320">
+                    <DockPanel Background="{StaticResource SolidBlack}" Height="250">
 
-                        <Grid VerticalAlignment="Bottom" Height="319">
+                        <Grid VerticalAlignment="Bottom" Height="250">
                             <Grid.RowDefinitions>
                                 <RowDefinition Height="1*"></RowDefinition>
                                 <RowDefinition Height="1*"></RowDefinition>
@@ -46,8 +46,71 @@
                             </Grid.RowDefinitions>
 
 
-                            <Button  Grid.Row="1" Background="Transparent">
-                                <Image  Source="..\Resources/TypeAnswers/icons8-casella-di-controllo-selezionata-50.png"/>
+                            <Button x:Name="btnCheck" Grid.Row="1"  Style="{StaticResource ButtonStyle}">
+                                <Button.Background>
+                                    <SolidColorBrush x:Name="HoverCheck" Color="#FF222121" />
+                                </Button.Background>
+                                
+                                <Image  Source="..\Resources\TypeAnswers\icons8-casella-di-controllo-selezionata-50.png"/>
+
+                                <Button.Triggers>
+                                    <EventTrigger RoutedEvent="Button.MouseEnter" SourceName="btnCheck" >
+
+                                        <!--QUANDO IL MOUSE VA SOPRA IL BUTTON -->
+                                        <EventTrigger.Actions>
+                                            <BeginStoryboard>
+                                                <Storyboard>
+                                                    <ColorAnimation Storyboard.TargetName="HoverCheck"
+                                                        Storyboard.TargetProperty="(SolidColorBrush.Color)"
+                                                        From="#FF222121"
+                                                        To="Yellow"
+                                                        AutoReverse="false"
+                                                        Duration="0:0:0.15"  >
+                                                        <ColorAnimation.EasingFunction>
+                                                            <ElasticEase EasingMode="EaseInOut"/>
+                                                        </ColorAnimation.EasingFunction>
+                                                    </ColorAnimation>
+                                                </Storyboard>
+                                            </BeginStoryboard>
+                                        </EventTrigger.Actions>
+                                    </EventTrigger>
+
+                                    <!-- QUANDO IL MOUSE ESE DAL BUTTON-->
+                                    <EventTrigger RoutedEvent="Button.MouseLeave" SourceName="btnCheck" >
+
+                                        <EventTrigger.Actions>
+                                            <BeginStoryboard>
+                                                <Storyboard>
+                                                    <ColorAnimation Storyboard.TargetName="HoverCheck"
+                                                        Storyboard.TargetProperty="(SolidColorBrush.Color)"
+                                                        From="Yellow"
+                                                        To="#FF222121"
+                                                        AutoReverse="false"
+                                                        Duration="0:0:0.3"  />
+                                                </Storyboard>
+                                            </BeginStoryboard>
+                                        </EventTrigger.Actions>
+                                    </EventTrigger>
+
+                                    <!-- QUANDO SI FA CLICK SUL MOUSE -->
+                                    <EventTrigger RoutedEvent="Button.Click" SourceName="btnCheck" >
+
+                                        <EventTrigger.Actions>
+                                            <BeginStoryboard>
+                                                <Storyboard>
+                                                    <ColorAnimation Storyboard.TargetName="HoverCheck"
+                                                        Storyboard.TargetProperty="(SolidColorBrush.Color)"
+                                                        From="#7b7d7b"
+                                                        To="#333333"
+                                                        AutoReverse="true"
+                                                        Duration="0:0:0.1"  />
+                                                </Storyboard>
+                                            </BeginStoryboard>
+                                        </EventTrigger.Actions>
+                                    </EventTrigger>
+
+                                </Button.Triggers>
+
                             </Button>
 
                             <Button  Grid.Row="0" Background="Transparent">

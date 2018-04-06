@@ -13,16 +13,6 @@
         <Setter Property="BorderBrush" Value="Transparent"/>
         <Setter Property="BorderThickness" Value="0" />
         <Setter Property="Height" Value="60"/>
-        
-
-        <Style.Triggers>
-            <Trigger Property="IsMouseOver" Value="True">
-                <Setter Property="Background" Value="#FF504E4E"/>
-            </Trigger>
-            <Trigger Property="Button.IsPressed" Value="True">
-                <Setter  Property="Background" Value="#FF5A5A5A" />
-            </Trigger>
-        </Style.Triggers>
     </Style>
     
 

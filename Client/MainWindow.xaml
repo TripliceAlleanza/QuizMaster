@@ -65,7 +65,11 @@
                                                         From="#FF6F0000"
                                                         To="#FF1F6D15"
                                                         AutoReverse="false"
-                                                        Duration="0:0:0.15"  />
+                                                        Duration="0:0:0.15"  >
+                                            <ColorAnimation.EasingFunction>
+                                                <ElasticEase EasingMode="EaseInOut"/>
+                                            </ColorAnimation.EasingFunction>
+                                            </ColorAnimation>
                                     </Storyboard>
                                 </BeginStoryboard>
                             </EventTrigger.Actions>
