@@ -7,22 +7,6 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="350" Width="600">
 
-    <Window.Resources>
-        <Storyboard x:Key="WindowLoad"/>
-    </Window.Resources>
-    <Window.Triggers>
-
-        <EventTrigger RoutedEvent="Window.Loaded" >
-
-            <EventTrigger.Actions>
-                <BeginStoryboard>
-                    <Storyboard>
-                        <ColorAnimation Storyboard.TargetName="Change" Storyboard.TargetProperty="(SolidColorBrush.Color)" From="Red" To="Green" AutoReverse="false" Duration="0:0:0.4"  />
-                    </Storyboard>
-                </BeginStoryboard>
-            </EventTrigger.Actions>
-        </EventTrigger>
-    </Window.Triggers>
 
     <Grid>
 
@@ -49,12 +33,13 @@
 
                     <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="0">
                         <TextBlock Text="Nome: " Style="{StaticResource TextStyle1}" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="10,0,0,0" />
-                        <TextBox Style="{StaticResource TextBoxStyle1}" Width="130" Margin="20,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                        <TextBox x:Name="txbNome"  Style="{StaticResource TextBoxStyle1}" Width="130" Margin="20,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Center"/>
                     </StackPanel>
 
                     <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="25,0,10,0">
                         <TextBlock Text="Cognome: " Style="{StaticResource TextStyle1}" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="10,0,0,0" />
-                        <TextBox Style="{StaticResource TextBoxStyle1}" Width="130" Margin="20,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                        <TextBox x:Name="txbCognome" Style="{StaticResource TextBoxStyle1}" Width="130" Margin="20,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Center">
+                        </TextBox>
                     </StackPanel>
 
                 </DockPanel>
@@ -62,11 +47,65 @@
                 
                     
 
-                <Button x:Name="Avvia" Grid.Row="1" Style="{StaticResource ButtonStyle}"  Width="150" FontSize="22">AVVIA QUIZ
+                <Button x:Name="btnAvvia" Grid.Row="1" Style="{StaticResource ButtonStyle}" Width="150" FontSize="22">AVVIA QUIZ
 
                     <Button.Background>
-                        <SolidColorBrush  x:Name="Change" Color="Red"/>
+                        <SolidColorBrush  x:Name="Change" Color="#FF6F0000"/>
                     </Button.Background>
+
+                    <Button.Triggers>
+                        <EventTrigger RoutedEvent="Button.MouseEnter" SourceName="btnAvvia" >
+
+                            <!--QUANDO IL MOUSE VA SOPRA IL BUTTON -->
+                            <EventTrigger.Actions>
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <ColorAnimation Storyboard.TargetName="Change"
+                                                        Storyboard.TargetProperty="(SolidColorBrush.Color)"
+                                                        From="#FF6F0000"
+                                                        To="#FF1F6D15"
+                                                        AutoReverse="false"
+                                                        Duration="0:0:0.2"  />
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </EventTrigger.Actions>
+                        </EventTrigger>
+
+                        <!-- QUANDO IL MOUSE ESE DAL BUTTON-->
+                        <EventTrigger RoutedEvent="Button.MouseLeave" SourceName="btnAvvia" >
+
+                            <EventTrigger.Actions>
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <ColorAnimation Storyboard.TargetName="Change"
+                                                        Storyboard.TargetProperty="(SolidColorBrush.Color)"
+                                                        From="#FF1F6D15"
+                                                        To="#FF6F0000"
+                                                        AutoReverse="false"
+                                                        Duration="0:0:0.2"  />
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </EventTrigger.Actions>
+                        </EventTrigger>
+
+                        <!-- QUANDO SI FA CLICK SUL MOUSE -->
+                        <EventTrigger RoutedEvent="Button.Click" SourceName="btnAvvia" >
+
+                            <EventTrigger.Actions>
+                                <BeginStoryboard>
+                                    <Storyboard>
+                                        <ColorAnimation Storyboard.TargetName="Change"
+                                                        Storyboard.TargetProperty="(SolidColorBrush.Color)"
+                                                        From="#FF1F6D15"
+                                                        To="#228B22"
+                                                        AutoReverse="true"
+                                                        Duration="0:0:0.1"  />
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </EventTrigger.Actions>
+                        </EventTrigger>
+                        
+                    </Button.Triggers>
                 </Button>
             </Grid>
         </DockPanel>
