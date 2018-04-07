@@ -58,7 +58,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Page Include="MainWindow.xaml">
+    <Page Include="Views\MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -66,7 +66,9 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="MainWindow.xaml.cs">
+    <Compile Include="Models\Client.cs" />
+    <Compile Include="ViewModels\MainWindowViewModel.cs" />
+    <Compile Include="Views\MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
@@ -99,17 +101,15 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Commons.Styling\Commons.Styling.csproj">
+    <ProjectReference Include="..\Commons\Styling\Commons.Styling.csproj">
       <Project>{83ae2eaf-9d37-4fa7-a9e0-44e0a859b5bc}</Project>
       <Name>Commons.Styling</Name>
     </ProjectReference>
-    <ProjectReference Include="..\SharedLibrary\Commons.SharedLibrary.csproj">
+    <ProjectReference Include="..\Commons\SharedLibrary\Commons.SharedLibrary.csproj">
       <Project>{46dc2a0b-286a-4be0-bdfe-bd362e6d604d}</Project>
       <Name>Commons.SharedLibrary</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Networking\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

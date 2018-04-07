@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace QuizMaster___Client.Properties {
+namespace QuizMasterClient.Properties {
     using System;
     
     

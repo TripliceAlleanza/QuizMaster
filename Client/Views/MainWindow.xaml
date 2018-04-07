@@ -1,12 +1,16 @@
-﻿<Window x:Class="QuizMaster___Client.MainWindow"
+﻿<Window x:Class="QuizMasterClient.Views.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:QuizMaster___Client"
+        xmlns:local="clr-namespace:QuizMasterClient"
+        xmlns:viewModels="clr-namespace:QuizMaster___Client.ViewModels"
         mc:Ignorable="d"
         Title="MainWindow" Height="350" Width="600">
 
+    <Window.DataContext>
+        <viewModels:MainWindowViewModel/>
+    </Window.DataContext>
 
     <Grid>
 
@@ -28,26 +32,26 @@
                     <RowDefinition Height="1*"></RowDefinition>
                 </Grid.RowDefinitions>
 
-                <DockPanel Background="{StaticResource BackgroundClientDockPanel}" Grid.Row="0" HorizontalAlignment="Center">
+                <DockPanel Background="{StaticResource BackgroundClientDockPanel}" Grid.Row="0" Margin="35,0,0,0" HorizontalAlignment="Left" Width="523">
 
 
                     <StackPanel Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="0">
                         <TextBlock Text="Nome: " Style="{StaticResource TextStyle1}" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="10,0,0,0" />
-                        <TextBox x:Name="txbNome"  Style="{StaticResource TextBoxStyle1}" Width="130" Margin="20,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Center"/>
+                        <TextBox x:Name="txbNome"  Style="{StaticResource TextBoxStyle1}" Width="130" Margin="20,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Center" Text="{Binding MeClient.Nome}"/>
                     </StackPanel>
 
                     <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="25,0,10,0">
                         <TextBlock Text="Cognome: " Style="{StaticResource TextStyle1}" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="10,0,0,0" />
-                        <TextBox x:Name="txbCognome" Style="{StaticResource TextBoxStyle1}" Width="130" Margin="20,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Center">
+                        <TextBox x:Name="txbCognome" Style="{StaticResource TextBoxStyle1}" Width="130" Margin="20,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Center" Text="{Binding MeClient.Cognome}">
                         </TextBox>
                     </StackPanel>
 
                 </DockPanel>
 
-                
-                    
 
-                <Button x:Name="btnAvvia" Grid.Row="1" Style="{StaticResource ButtonStyle}" Width="150" FontSize="22">AVVIA QUIZ
+
+
+                <Button x:Name="btnAvvia" Grid.Row="1" Style="{StaticResource ButtonStyle}" Width="150" FontSize="22" Command="{Binding AvviaTestCommand}">AVVIA QUIZ
 
                     <Button.Background>
                         <SolidColorBrush  x:Name="Change" Color="#FF6F0000"/>
@@ -69,7 +73,7 @@
                                             <ColorAnimation.EasingFunction>
                                                 <ElasticEase EasingMode="EaseInOut"/>
                                             </ColorAnimation.EasingFunction>
-                                            </ColorAnimation>
+                                        </ColorAnimation>
                                     </Storyboard>
                                 </BeginStoryboard>
                             </EventTrigger.Actions>
@@ -108,7 +112,7 @@
                                 </BeginStoryboard>
                             </EventTrigger.Actions>
                         </EventTrigger>
-                        
+
                     </Button.Triggers>
                 </Button>
             </Grid>

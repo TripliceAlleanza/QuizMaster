@@ -44,11 +44,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="MVVM\RelayCommand.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Networking\" />
-    <Folder Include="Puzzles\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

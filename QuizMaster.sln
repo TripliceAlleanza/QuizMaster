@@ -7,7 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Server", "Server\Server.csp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Client", "Client\Client.csproj", "{8A5BEE42-AEA1-435D-B27B-5EA32F38090F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Commons.SharedLibrary", "SharedLibrary\Commons.SharedLibrary.csproj", "{46DC2A0B-286A-4BE0-BDFE-BD362E6D604D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Commons.SharedLibrary", "Commons\SharedLibrary\Commons.SharedLibrary.csproj", "{46DC2A0B-286A-4BE0-BDFE-BD362E6D604D}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClientTests", "ClientTests\ClientTests.csproj", "{0F5521B4-57B9-4E52-A491-C06E92B9F684}"
 EndProject
@@ -23,7 +23,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "JsonExamples", "JsonExample
 		states.json = states.json
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Commons.Styling", "Commons.Styling\Commons.Styling.csproj", "{83AE2EAF-9D37-4FA7-A9E0-44E0A859B5BC}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Commons.Styling", "Commons\Styling\Commons.Styling.csproj", "{83AE2EAF-9D37-4FA7-A9E0-44E0A859B5BC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
