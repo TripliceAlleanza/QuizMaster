@@ -154,11 +154,11 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Commons.Styling\Commons.Styling.csproj">
+    <ProjectReference Include="..\Commons\Styling\Commons.Styling.csproj">
       <Project>{83ae2eaf-9d37-4fa7-a9e0-44e0a859b5bc}</Project>
       <Name>Commons.Styling</Name>
     </ProjectReference>
-    <ProjectReference Include="..\SharedLibrary\Commons.SharedLibrary.csproj">
+    <ProjectReference Include="..\Commons\SharedLibrary\Commons.SharedLibrary.csproj">
       <Project>{46dc2a0b-286a-4be0-bdfe-bd362e6d604d}</Project>
       <Name>Commons.SharedLibrary</Name>
     </ProjectReference>
