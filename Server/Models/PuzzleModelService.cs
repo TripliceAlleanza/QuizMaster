@@ -4,6 +4,19 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using QuizMaster___SharedLibrary.QuizModel;
+using LiteDB;
+
+
+/*
+ *Dear maintainer:
+ *
+ *Once you are done trying to 'optimize' this routine,
+ *and have realized what a terrible mistake that was,
+ *please increment the following counter as a warning
+ *to the next guy:
+ *
+ *total_hours_wasted_here = 0.5
+ */
 
 namespace QuizMaster___Server.Models {
 
@@ -13,8 +26,8 @@ namespace QuizMaster___Server.Models {
 
 
 	public class PuzzleModelService : IPuzzleModelService {
-
-		public static string DB_PATH = "./database.porcodio"; // TODO Sistema ma non crearmi roba sul desktop!
+		private const string DB_FOLDER_NAME = @"\QuizMasterDB";
+		public static string DB_PATH = $"{Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments)}{DB_FOLDER_NAME}{DB_FOLDER_NAME}.db";
 
 		public List<QuizFormat> puzzles;
 
@@ -22,6 +35,7 @@ namespace QuizMaster___Server.Models {
 
 		public PuzzleModelService() {
 			puzzles = GetFromDB();
+
 		}
 
 		public PuzzleModelService(IEnumerable<QuizFormat> puzzles) {
@@ -50,8 +64,14 @@ namespace QuizMaster___Server.Models {
 
 		private void RemoveFromDB(QuizFormat quiz) {
 			throw new NotImplementedException();
+			
 		}
-
+		public static void CheckMainDirectoryPath() {
+			string MyDocuments_directory = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
+			//if there is no directory called as the "DB_FOLDER_NAME"'value then it will create it
+			if (!System.IO.Directory.Exists(MyDocuments_directory + DB_FOLDER_NAME))
+				System.IO.Directory.CreateDirectory(MyDocuments_directory + DB_FOLDER_NAME);
+		}
 
 	}
 }

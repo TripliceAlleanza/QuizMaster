@@ -2,10 +2,9 @@
 
 namespace QuizMaster___SharedLibrary.QuizModel {
 	public class QuizFormat {
-
-		// TODO Aggiungere ID
+		public int Id { get; set; }
 		public string QuizName { get; set; } = "NO NAME";
-		public string Class { get; set; } = "NO CLASS"; // what the fuck is this?
+		public string Class { get; set; } = "NO CLASS"; // what the fuck is this? -> I'll explain it to you tomorrow ;-)
 		public bool Randomize { get; set; } = false;
 		public string QuizTimeLimit { get; set; } = "NO TIME LIMIT";
 		public List<QuestionFormat> Questions { get; set; }
