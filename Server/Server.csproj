@@ -77,8 +77,6 @@
     <Compile Include="Views\TestState.xaml.cs">
       <DependentUpon>TestState.xaml</DependentUpon>
     </Compile>
-    <Compile Include="WorkInProgress\QuestionFormat.cs" />
-    <Compile Include="WorkInProgress\QuizFormat.cs" />
     <Page Include="Views\GameWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

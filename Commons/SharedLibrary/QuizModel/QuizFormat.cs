@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 
-namespace QuizMaster___Server.WorkInProgress {
+namespace QuizMaster___SharedLibrary.QuizModel {
 	class QuizFormat {
 
 		public string QuizName { get; set; } = "NO NAME";
@@ -14,7 +10,7 @@ namespace QuizMaster___Server.WorkInProgress {
 		public List<QuestionFormat> Questions { get; set; }
 
 		public QuizFormat() {
-
+			
 		}
 
 		public QuizFormat(string quizName, string @class, bool randomize, string quizTimeLimit) {
