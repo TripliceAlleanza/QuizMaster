@@ -49,9 +49,7 @@
     <Compile Include="QuizModel\QuestionFormat.cs" />
     <Compile Include="QuizModel\QuizFormat.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Networking\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>

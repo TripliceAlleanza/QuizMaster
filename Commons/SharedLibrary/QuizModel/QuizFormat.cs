@@ -1,10 +1,11 @@
 ﻿using System.Collections.Generic;
 
 namespace QuizMaster___SharedLibrary.QuizModel {
-	class QuizFormat {
+	public class QuizFormat {
 
+		// TODO Aggiungere ID
 		public string QuizName { get; set; } = "NO NAME";
-		public string Class { get; set; } = "NO CLASS";
+		public string Class { get; set; } = "NO CLASS"; // what the fuck is this?
 		public bool Randomize { get; set; } = false;
 		public string QuizTimeLimit { get; set; } = "NO TIME LIMIT";
 		public List<QuestionFormat> Questions { get; set; }

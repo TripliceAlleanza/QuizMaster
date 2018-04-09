@@ -63,6 +63,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Models\PuzzleModelService.cs" />
     <Compile Include="Networking\Networking.cs" />
     <Compile Include="Support\Support.cs" />
     <Compile Include="ViewModels\GameViewModel.cs" />
