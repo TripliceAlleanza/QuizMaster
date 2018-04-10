@@ -21,7 +21,7 @@ using LiteDB;
 namespace QuizMaster___Server.Models {
 
 	public interface IPuzzleModelService {
-		IList<QuizFormat> Puzzles { get; } 
+		IList<QuizFormat> Puzzles { get; }
 	}
 
 
@@ -66,6 +66,7 @@ namespace QuizMaster___Server.Models {
 			throw new NotImplementedException();
 			
 		}
+
 		public static void CheckMainDirectoryPath() {
 			string MyDocuments_directory = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
 			//if there is no directory called as the "DB_FOLDER_NAME"'value then it will create it
