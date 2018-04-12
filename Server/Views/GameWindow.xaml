@@ -14,7 +14,28 @@
             <ColumnDefinition Width="1*"></ColumnDefinition>
         </Grid.ColumnDefinitions>
 
-        <ListBox Grid.Column="0"  ItemsSource="{Binding Clients}" DisplayMemberPath="NameAndState"/>
+        <DockPanel Grid.Column="0">
+            <ListBox DockPanel.Dock="Left" ItemsSource="{Binding Clients}" DisplayMemberPath="NameAndState" />
+        </DockPanel>
 
+        <DockPanel Grid.Column="1">
+
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="3*"></RowDefinition>
+                    <RowDefinition Height="2*"></RowDefinition>
+                </Grid.RowDefinitions>
+
+                <DockPanel Grid.Row="0">
+                    <ListBox DockPanel.Dock="Right" ></ListBox>
+                </DockPanel>
+
+                <DockPanel Grid.Row="1">
+
+                    <TextBlock Text="ANCORA DA DEFINIRE" Style="{StaticResource TextStyle1}"/>
+                </DockPanel>
+            </Grid>
+            
+        </DockPanel>
     </Grid>
 </Window>

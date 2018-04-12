@@ -22,5 +22,9 @@ namespace QuizMaster___Server.Views {
 			InitializeComponent();
 			this.DataContext = new GameViewModel(options);
 		}
+
+		private void ListBox_SelectionChanged(object sender, SelectionChangedEventArgs e) {
+
+		}
 	}
 }
