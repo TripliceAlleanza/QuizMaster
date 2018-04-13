@@ -118,13 +118,13 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="images\icons8-cerchiato-sinistra-64.png" />
+    <Resource Include="Resources\Images\icons8-cerchiato-sinistra-64.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="images\icons8-freccia-64.png" />
+    <Resource Include="Resources\Images\icons8-freccia-64.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="images\icons8-cronometro-96.png" />
+    <Resource Include="Resources\Images\icons8-cronometro-96.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

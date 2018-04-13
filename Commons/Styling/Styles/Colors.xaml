@@ -7,4 +7,7 @@
     <SolidColorBrush x:Key="RedClient">#FF6F0000</SolidColorBrush>
     <SolidColorBrush x:Key="BackgroundClientDockPanel">#FFBBCDD4</SolidColorBrush>
     <SolidColorBrush x:Key="GreenSperanza">#FF1F6D15</SolidColorBrush>
+    <SolidColorBrush x:Key="WaitingColor">#00DCFF</SolidColorBrush>
+    <SolidColorBrush x:Key="TestingColor">#FF9900</SolidColorBrush>
+    <SolidColorBrush x:Key="FinishedColor">#19DC00</SolidColorBrush>
 </ResourceDictionary>

@@ -1,11 +1,13 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using QuizMaster___Server.Models;
+using QuizMaster___Server.Views;
+
+
 
 namespace ServerTests {
     [TestClass]
-    public class UnitTest1 {
-        [TestMethod]
-        public void TestMethod1() {
-        }
+    public class ConverterTests {
+       
     }
 }

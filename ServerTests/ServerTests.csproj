@@ -50,14 +50,30 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Drawing.Design" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="UnitTest1.cs" />
+    <Compile Include="ConverterTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
     <None Include="TestJsons\connect.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Commons\SharedLibrary\Commons.SharedLibrary.csproj">
+      <Project>{46dc2a0b-286a-4be0-bdfe-bd362e6d604d}</Project>
+      <Name>Commons.SharedLibrary</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Commons\Styling\Commons.Styling.csproj">
+      <Project>{83ae2eaf-9d37-4fa7-a9e0-44e0a859b5bc}</Project>
+      <Name>Commons.Styling</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Server\Server.csproj">
+      <Project>{85dba02c-6147-4b30-bf84-4196f09c8c18}</Project>
+      <Name>Server</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

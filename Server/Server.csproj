@@ -78,6 +78,7 @@
     <Compile Include="Views\QuizEditor.xaml.cs">
       <DependentUpon>QuizEditor.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\StateToBrushConverter.cs" />
     <Compile Include="Views\TestState.xaml.cs">
       <DependentUpon>TestState.xaml</DependentUpon>
     </Compile>
