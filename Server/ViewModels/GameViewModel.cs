@@ -37,10 +37,9 @@ namespace QuizMaster___Server.ViewModels {
 			communicationsManager.Start();
 		}
 
-		private void CommunicationsManagerOnMessageReceived(IPAddress clientIP, string message) {
+		private void CommunicationsManagerOnMessageReceived(IPAddress clientIP, int port, string message) {
 			var o = JObject.Parse(message);
-			var client = Clients.FirstOrDefault(c => c.IPAddress == clientIP) ?? new Client() {IPAddress = clientIP};
-
+			var client = Clients.FirstOrDefault(c => c.IPAddress == clientIP) ?? new Client() {IPAddress = clientIP, Port = port};
 
 			ParseJSONCommand(client, o["command"].Value<string>(), o["data"] as JObject);		
 		}
@@ -58,7 +57,7 @@ namespace QuizMaster___Server.ViewModels {
 			client.ClientState =
 				(ClientState) Enum.Parse(typeof(ClientState), data.Value<string>("state").CapitalizeFirstLetter());
 
-			App.Current.Dispatcher.Invoke(() => Clients.Add(client));	
+			App.Current.Dispatcher.Invoke(() => Clients.Add(client));
 		}
 	}
 }

@@ -11,11 +11,16 @@ namespace QuizMaster___Server.Models {
 		Waiting, Testing, Finished
 	}
 	public class Client {
+
 		public int Id { get; set; }
+
 		public IPAddress IPAddress { get; set; }
+		public int Port { get; set; }
+
 		public string Name { get; set; }
 		public string Surname { get; set; }
 		public string Class { get; set; }
+
 		public ClientState ClientState { get; set; }
 
 		public string NameAndState => $"{Name} {Surname} - {ClientState}";

@@ -24,7 +24,7 @@ namespace QuizMaster___Server.Networking {
 
 		/// <param name="client">The tcpClient from which the connection is received</param>
 		/// <param name="message">The message (usually a message)</param>
-	    public delegate void MessageReceivedEventArgs(IPAddress client, string message);
+	    public delegate void MessageReceivedEventArgs(IPAddress client, int port, string message);
 
 		/// <summary>
 		/// Raised when a message is received from a tcpClient
@@ -85,8 +85,8 @@ namespace QuizMaster___Server.Networking {
 			    var client = listener.AcceptTcpClient();
 			    string message = ReceiveJson(client);
 			    if (string.IsNullOrEmpty(message)) Debugger.Break();
-				var task = new Task(() => {			    
-					MessageReceived?.Invoke((client.Client.LocalEndPoint as IPEndPoint).Address, message);
+				var task = new Task(() => {  
+					MessageReceived?.Invoke((client.Client.LocalEndPoint as IPEndPoint)?.Address, ((IPEndPoint) client.Client.LocalEndPoint).Port, message);
 			    });
 			    task.Start();
 		    }
