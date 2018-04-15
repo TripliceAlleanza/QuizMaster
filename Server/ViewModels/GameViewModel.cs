@@ -6,11 +6,13 @@ using System.Linq;
 using System.Net;
 using System.Text;
 using System.Threading.Tasks;
+using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using QuizMaster___Server.Models;
 using static System.Diagnostics.Debug;
 using QuizMaster___Server.Networking;
 using QuizMaster___Server.Support;
+using QuizMaster___SharedLibrary.Packets;
 
 namespace QuizMaster___Server.ViewModels {
 
@@ -38,24 +40,21 @@ namespace QuizMaster___Server.ViewModels {
 		}
 
 		private void CommunicationsManagerOnMessageReceived(IPAddress clientIP, int port, string message) {
-			var o = JObject.Parse(message);
 			var client = Clients.FirstOrDefault(c => c.IPAddress == clientIP) ?? new Client() {IPAddress = clientIP, Port = port};
 
-			ParseJSONCommand(client, o["command"].Value<string>(), o["data"] as JObject);		
+			ParseJSONCommand(client, JsonConvert.DeserializeObject<RequestPacket>(message));		
 		}
 
-		private void ParseJSONCommand(Client client, string command, JObject data) {
-			if (command == "connect") {
+		private void ParseJSONCommand(Client client, RequestPacket data) {
+			if (data.Request == "connect") {
 				ConnectClient(client, data);
 			}
 		}
 
-		private void ConnectClient(Client client, JObject data) {
-			client.Name = data.Value<string>("name");
-			client.Surname = data.Value<string>("surname");
-			client.Class = data.Value<string>("class");
-			client.ClientState =
-				(ClientState) Enum.Parse(typeof(ClientState), data.Value<string>("state").CapitalizeFirstLetter());
+		private void ConnectClient(Client client, RequestPacket data) {
+			client.Name = data.Data["name"] as string;
+			client.Surname = data.Data["surname"] as string;
+			client.ClientState = ClientState.Waiting;
 
 			App.Current.Dispatcher.Invoke(() => Clients.Add(client));
 		}
