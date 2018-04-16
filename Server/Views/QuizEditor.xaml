@@ -7,143 +7,193 @@
         mc:Ignorable="d"
         Title="QuizEditor" Height="500" Width="1025" Background="White" WindowStartupLocation="CenterScreen">
 
+
+
     <Grid>
 
-
-        <Grid.RowDefinitions>
-            <RowDefinition Height="1*"></RowDefinition>
-            <RowDefinition Height="5*"></RowDefinition>
-        </Grid.RowDefinitions>
-
-        <DockPanel Grid.Row="0" Background="{StaticResource OpaqueBlack}">
-
-            <StackPanel Orientation="Horizontal" Width="1020" Background="#FF222121" Margin="0,0,0,-0.577" HorizontalAlignment="Left">
-
-                <TextBlock Text="Inserisci domanda: " Style="{StaticResource TextStyle1}" FontSize="24" Margin="25,0,0,0" />
-                <TextBox Height="50" Width="500" Style="{StaticResource TextBoxStyle1 }" Margin="20,0,0,0"></TextBox>
-                <Button FontSize="24" Height="50" Width="160" Style="{StaticResource ButtonStyle}" Content="Inserisci" HorizontalAlignment="Center" Margin="30,0,0,0" />
-            </StackPanel>
-
-        </DockPanel>
-
-        <DockPanel Grid.Row="1" Background="{StaticResource OpaqueBlack}">
-            <Grid>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="1*"></ColumnDefinition>
-                    <ColumnDefinition Width="17*"></ColumnDefinition>
-                </Grid.ColumnDefinitions>
-
-                <DockPanel Grid.Column="0" >
-
-                    <DockPanel Background="{StaticResource SolidBlack}" Height="250">
-
-                        <Grid VerticalAlignment="Bottom" Height="250">
-                            <Grid.RowDefinitions>
-                                <RowDefinition Height="1*"></RowDefinition>
-                                <RowDefinition Height="1*"></RowDefinition>
-                                <RowDefinition Height="1*"></RowDefinition>
-                                <RowDefinition Height="1*"></RowDefinition>
-                            </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="3*"></ColumnDefinition>
+            <ColumnDefinition Width="1*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
 
 
-                            <Button x:Name="btnCheck" Grid.Row="1"  Style="{StaticResource ButtonStyle}">
-                                <Button.Background>
-                                    <SolidColorBrush x:Name="HoverCheck" Color="#FF222121" />
-                                </Button.Background>
-                                
-                                <Image  Source="..\Resources\TypeAnswers\icons8-casella-di-controllo-selezionata-50.png"/>
+        <Grid Grid.Column="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*"></RowDefinition>
+                <RowDefinition Height="6*"></RowDefinition>
+            </Grid.RowDefinitions>
 
-                                <Button.Triggers>
-                                    <EventTrigger RoutedEvent="Button.MouseEnter" SourceName="btnCheck" >
+            <DockPanel Grid.Row="0" Background="{StaticResource OpaqueBlack}">
 
-                                        <!--QUANDO IL MOUSE VA SOPRA IL BUTTON -->
-                                        <EventTrigger.Actions>
-                                            <BeginStoryboard>
-                                                <Storyboard>
-                                                    <ColorAnimation Storyboard.TargetName="HoverCheck"
+                <Grid>
+
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="173*"></ColumnDefinition>
+                        <ColumnDefinition Width="450*"></ColumnDefinition>
+                        <ColumnDefinition Width="141*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+
+                    <TextBlock Grid.Column="0" Text="Inserisci domanda: " Style="{StaticResource TextStyle1}" FontSize="18" Margin="9,21,12.07,20.606" HorizontalAlignment="Center" VerticalAlignment="Center" Height="26" Width="152" />
+                    <TextBox Grid.Column="1" Style="{StaticResource TextBoxStyle1 }" Margin="22.93,14,22.324,14.606" VerticalAlignment="Stretch" HorizontalAlignment="Stretch"/>
+                    <Button Grid.Column="2" FontSize="24" Style="{StaticResource ButtonStyle}" Content="Inserisci" HorizontalAlignment="Center" Margin="18.676,14,17.62,14.606" VerticalAlignment="Center" Width="105" Height="39" />
+
+                </Grid>
+            </DockPanel>
+
+            <DockPanel Grid.Row="1" Background="{StaticResource OpaqueBlack}">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1*"></ColumnDefinition>
+                        <ColumnDefinition Width="13*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+
+                    <DockPanel Grid.Column="0" >
+
+                        <DockPanel Background="{StaticResource SolidBlack}" Height="250">
+
+                            <Grid VerticalAlignment="Bottom" Height="250">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="1*"></RowDefinition>
+                                    <RowDefinition Height="1*"></RowDefinition>
+                                    <RowDefinition Height="1*"></RowDefinition>
+                                    <RowDefinition Height="1*"></RowDefinition>
+                                </Grid.RowDefinitions>
+
+
+                                <Button x:Name="btnCheck" Grid.Row="1"  Style="{StaticResource ButtonStyle}">
+                                    <Button.Background>
+                                        <SolidColorBrush x:Name="HoverCheck" Color="#FF222121" />
+                                    </Button.Background>
+
+                                    <Image  Source="..\Resources\TypeAnswers\icons8-casella-di-controllo-selezionata-50.png"/>
+
+                                    <Button.Triggers>
+                                        <EventTrigger RoutedEvent="Button.MouseEnter" SourceName="btnCheck" >
+
+                                            <!--QUANDO IL MOUSE VA SOPRA IL BUTTON -->
+                                            <EventTrigger.Actions>
+                                                <BeginStoryboard>
+                                                    <Storyboard>
+                                                        <ColorAnimation Storyboard.TargetName="HoverCheck"
                                                         Storyboard.TargetProperty="(SolidColorBrush.Color)"
                                                         From="#FF222121"
                                                         To="Yellow"
                                                         AutoReverse="false"
                                                         Duration="0:0:0.15"  >
-                                                        <ColorAnimation.EasingFunction>
-                                                            <ElasticEase EasingMode="EaseInOut"/>
-                                                        </ColorAnimation.EasingFunction>
-                                                    </ColorAnimation>
-                                                </Storyboard>
-                                            </BeginStoryboard>
-                                        </EventTrigger.Actions>
-                                    </EventTrigger>
+                                                            <ColorAnimation.EasingFunction>
+                                                                <ElasticEase EasingMode="EaseInOut"/>
+                                                            </ColorAnimation.EasingFunction>
+                                                        </ColorAnimation>
+                                                    </Storyboard>
+                                                </BeginStoryboard>
+                                            </EventTrigger.Actions>
+                                        </EventTrigger>
 
-                                    <!-- QUANDO IL MOUSE ESE DAL BUTTON-->
-                                    <EventTrigger RoutedEvent="Button.MouseLeave" SourceName="btnCheck" >
+                                        <!-- QUANDO IL MOUSE ESE DAL BUTTON-->
+                                        <EventTrigger RoutedEvent="Button.MouseLeave" SourceName="btnCheck" >
 
-                                        <EventTrigger.Actions>
-                                            <BeginStoryboard>
-                                                <Storyboard>
-                                                    <ColorAnimation Storyboard.TargetName="HoverCheck"
+                                            <EventTrigger.Actions>
+                                                <BeginStoryboard>
+                                                    <Storyboard>
+                                                        <ColorAnimation Storyboard.TargetName="HoverCheck"
                                                         Storyboard.TargetProperty="(SolidColorBrush.Color)"
                                                         From="Yellow"
                                                         To="#FF222121"
                                                         AutoReverse="false"
                                                         Duration="0:0:0.3"  />
-                                                </Storyboard>
-                                            </BeginStoryboard>
-                                        </EventTrigger.Actions>
-                                    </EventTrigger>
+                                                    </Storyboard>
+                                                </BeginStoryboard>
+                                            </EventTrigger.Actions>
+                                        </EventTrigger>
 
-                                    <!-- QUANDO SI FA CLICK SUL MOUSE -->
-                                    <EventTrigger RoutedEvent="Button.Click" SourceName="btnCheck" >
+                                        <!-- QUANDO SI FA CLICK SUL MOUSE -->
+                                        <EventTrigger RoutedEvent="Button.Click" SourceName="btnCheck" >
 
-                                        <EventTrigger.Actions>
-                                            <BeginStoryboard>
-                                                <Storyboard>
-                                                    <ColorAnimation Storyboard.TargetName="HoverCheck"
+                                            <EventTrigger.Actions>
+                                                <BeginStoryboard>
+                                                    <Storyboard>
+                                                        <ColorAnimation Storyboard.TargetName="HoverCheck"
                                                         Storyboard.TargetProperty="(SolidColorBrush.Color)"
                                                         From="#7b7d7b"
                                                         To="#333333"
                                                         AutoReverse="true"
                                                         Duration="0:0:0.1"  />
-                                                </Storyboard>
-                                            </BeginStoryboard>
-                                        </EventTrigger.Actions>
-                                    </EventTrigger>
+                                                    </Storyboard>
+                                                </BeginStoryboard>
+                                            </EventTrigger.Actions>
+                                        </EventTrigger>
 
-                                </Button.Triggers>
+                                    </Button.Triggers>
 
-                            </Button>
+                                </Button>
 
-                            <Button  Grid.Row="0" Background="Transparent">
-                                <StackPanel>
-                                    <Image  Grid.Row="0" Source="..\Resources\TypeAnswers\icons8-pulsante-di-opzione-64.png" />
-                                </StackPanel>
-                            </Button>
+                                <Button  Grid.Row="0" Background="Transparent">
+                                    <StackPanel>
+                                        <Image  Grid.Row="0" Source="..\Resources\TypeAnswers\icons8-pulsante-di-opzione-64.png" />
+                                    </StackPanel>
+                                </Button>
 
-                            <Button  Grid.Row="2" Background="Transparent">
-                                <Image  Grid.Row="2" Source="..\Resources\TypeAnswers\icons8-casella-di-testo-filled-100.png"/>
-                            </Button>
+                                <Button  Grid.Row="2" Background="Transparent">
+                                    <Image  Grid.Row="2" Source="..\Resources\TypeAnswers\icons8-casella-di-testo-filled-100.png"/>
+                                </Button>
 
-                            <Button Grid.Row="3" Background="Transparent">
-                                <Image  Grid.Row="3" Source="..\Resources\TypeAnswers\icons8-scambia-filled-100.png" />
-                            </Button>
-                            
-
-                        </Grid>
+                                <Button Grid.Row="3" Background="Transparent">
+                                    <Image  Grid.Row="3" Source="..\Resources\TypeAnswers\icons8-scambia-filled-100.png" />
+                                </Button>
 
 
+                            </Grid>
+
+
+
+                        </DockPanel>
+                    </DockPanel>
+
+
+                    <DockPanel Grid.Column="1">
 
                     </DockPanel>
-                </DockPanel>
 
 
-                <DockPanel Grid.Column="1">
-
-                </DockPanel>
-
-
-            </Grid>
-        </DockPanel>
+                </Grid>
+            </DockPanel>
 
 
+        </Grid>
+
+        <Border Grid.Column="1" BorderThickness="1" BorderBrush="Black">
+            <DockPanel   Background="{StaticResource SolidBlack}">
+
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="88*"></RowDefinition>
+                        <RowDefinition Height="31*"></RowDefinition>
+                    </Grid.RowDefinitions>
+
+                    <DockPanel Background="{StaticResource SolidBlack}" Grid.Row="0" Margin="0,0,-0.155,2.042">
+                        <ListBox Background="{StaticResource SolidBlack}">
+                            <ListBoxItem Content="PORCOOOOOO"/>
+                        </ListBox>
+
+                    </DockPanel>
+
+                    <DockPanel Grid.Row="1" Margin="0,1.958,-0.155,-0.141" >
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="1*"></RowDefinition>
+                                <RowDefinition Height="1*"></RowDefinition>
+                                <RowDefinition Height="1*"></RowDefinition>
+                            </Grid.RowDefinitions>
+
+                            <Button Grid.Row="0" Style="{StaticResource ButtonStyle}" Content="Cancella" Width="150"></Button>
+                            <Button Grid.Row="1" Style="{StaticResource ButtonStyle}" Content="Modifica" Width="150"></Button>
+                            <Button Grid.Row="2" Style="{StaticResource ButtonStyle}" Content="Salva" Width="150"></Button>
+                        </Grid>
+
+                    </DockPanel>
+                </Grid>
+
+            </DockPanel>
+        </Border>
     </Grid>
 </Window>
