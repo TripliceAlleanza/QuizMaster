@@ -7,7 +7,7 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;
 
 namespace QuizMaster___SharedLibrary.Packets {
-	public class RequestPacket {
+	public class RequestPacket : ISerializablePacket {
 
 		public static readonly JsonSerializerSettings SerializerSettings = new JsonSerializerSettings
 			{ContractResolver = new CamelCasePropertyNamesContractResolver()};
@@ -24,5 +24,9 @@ namespace QuizMaster___SharedLibrary.Packets {
 		public string Serialize() {
 			return JsonConvert.SerializeObject(this, SerializerSettings);
 		}
+	}
+
+	public interface ISerializablePacket {
+		string Serialize();
 	}
 }

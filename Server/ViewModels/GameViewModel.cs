@@ -9,19 +9,15 @@ using System.Threading.Tasks;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using QuizMaster___Server.Models;
-using static System.Diagnostics.Debug;
 using QuizMaster___Server.Networking;
-using QuizMaster___Server.Support;
 using QuizMaster___SharedLibrary.Packets;
 
 namespace QuizMaster___Server.ViewModels {
-
 	interface IGameViewModel {
 		ObservableCollection<Client> Clients { get; }
 	}
 
 	class GameViewModel : IGameViewModel, INotifyPropertyChanged {
-
 		public event PropertyChangedEventHandler PropertyChanged;
 
 		public ObservableCollection<Client> Clients { get; private set; }
@@ -40,9 +36,12 @@ namespace QuizMaster___Server.ViewModels {
 		}
 
 		private void CommunicationsManagerOnMessageReceived(IPAddress clientIP, int port, string message) {
-			var client = Clients.FirstOrDefault(c => c.IPAddress == clientIP) ?? new Client() {IPAddress = clientIP, Port = port};
+			var client = Clients.FirstOrDefault(c => c.IPAddress == clientIP) ?? new Client() {
+				IPAddress = clientIP,
+				Port = port
+			};
 
-			ParseJSONCommand(client, JsonConvert.DeserializeObject<RequestPacket>(message));		
+			ParseJSONCommand(client, JsonConvert.DeserializeObject<RequestPacket>(message));
 		}
 
 		private void ParseJSONCommand(Client client, RequestPacket data) {
@@ -56,7 +55,13 @@ namespace QuizMaster___Server.ViewModels {
 			client.Surname = data.Data["surname"] as string;
 			client.ClientState = ClientState.Waiting;
 
-			App.Current.Dispatcher.Invoke(() => Clients.Add(client));
+			var responsePacket = new MessagePacket(Clients.Contains(client) ? "already_connected" : "connected");
+			// TODO Add Puzzle Name To Repose Packet
+
+			if (!Clients.Contains(client))
+				App.Current.Dispatcher.Invoke(() => Clients.Add(client));
+
+			communicationsManager.SendData(client.IPAddress, responsePacket.Serialize());
 		}
 	}
 }
