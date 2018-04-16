@@ -50,7 +50,6 @@
     <Compile Include="QuizModel\QuestionFormat.cs" />
     <Compile Include="QuizModel\QuizFormat.cs" />
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>

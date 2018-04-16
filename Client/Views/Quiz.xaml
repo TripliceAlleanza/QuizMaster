@@ -51,12 +51,12 @@
                     <ColumnDefinition Width="231*"></ColumnDefinition>
                 </Grid.ColumnDefinitions>
 
-                <DockPanel Grid.Column="0" Grid.ColumnSpan="1" Margin="0,0,1.211,0.211">
-                    <Image Style="{StaticResource IconsDefault}" Source="../images/icons8-cronometro-96.png" Width="45" Height="45" HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="5,0,0,0"  />
+                <DockPanel Grid.Column="0" Grid.ColumnSpan="1" Margin="0,0,1.211,5" VerticalAlignment="Bottom">
+                    <Image Style="{StaticResource IconsDefault}" Source="../Resources/Images/icons8-cronometro-96.png" Width="45" Height="45" HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="5,0,0,0"  />
                     <Label Style="{StaticResource LabelStyle1}" Content="29:12" FontSize="24" HorizontalAlignment="Left" Margin="5,0,0,0"></Label>
                 </DockPanel>
 
-                <DockPanel Grid.Column="1" >
+                <DockPanel Grid.Column="1" VerticalAlignment="Bottom" Margin="0,0,0,5" >
 
                     <Grid>
                         <Grid.ColumnDefinitions>
@@ -65,11 +65,11 @@
                         </Grid.ColumnDefinitions>
 
                         <StackPanel Grid.Column="0" Background="Transparent" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,0,20,0" >
-                            <Image Source="../images/icons8-cerchiato-sinistra-64.png" Width="65" Height="65" HorizontalAlignment="Left" VerticalAlignment="Center" />
+                            <Image Source="../Resources/Images/icons8-cerchiato-sinistra-64.png" Width="65" Height="65" HorizontalAlignment="Left" VerticalAlignment="Center" />
                         </StackPanel>
 
                         <StackPanel Grid.Column="1" Background="Transparent" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="20,0,0,0" >
-                            <Image Source="../images/icons8-freccia-64.png" Width="55" Height="55" />
+                            <Image Source="../Resources/Images/icons8-freccia-64.png" Width="55" Height="55" />
                         </StackPanel>
 
                     </Grid>
@@ -77,11 +77,11 @@
 
                 </DockPanel>
 
-                <DockPanel Grid.Column="2">
+                <DockPanel Grid.Column="2" VerticalAlignment="Bottom" Margin="0,0,0,5">
 
                     <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
                         <TextBlock Text="Vai a " Style="{StaticResource TextStyle1}" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="30,0,0,0" FontSize="24"></TextBlock>
-                        <TextBox Style="{StaticResource TextBoxStyle1}" Width="100" Height="60" HorizontalAlignment="Right" Margin="20,0,10,0" FontSize="24"></TextBox>
+                        <TextBox Style="{StaticResource TextBoxStyle1}" Width="100" Height="60" HorizontalAlignment="Stretch" Margin="20,0,10,5" FontSize="24" VerticalAlignment="Stretch"></TextBox>
                     </StackPanel>
 
 
