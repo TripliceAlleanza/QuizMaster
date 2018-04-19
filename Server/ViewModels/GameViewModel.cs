@@ -5,6 +5,7 @@ using System.ComponentModel;
 using System.Linq;
 using System.Net;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
@@ -24,6 +25,8 @@ namespace QuizMaster___Server.ViewModels {
 
 		private IOptionsViewModel optionsViewModel;
 		private CommunicationsManager communicationsManager;
+		private Thread broadcastConnectionThread;
+
 
 		public GameViewModel(IOptionsViewModel optionsViewModel) {
 			this.optionsViewModel = optionsViewModel;
@@ -48,9 +51,13 @@ namespace QuizMaster___Server.ViewModels {
 			if (data.Request == "connect") {
 				ConnectClient(client, data);
 			}
+
+			if (data.Request == "ping") {
+				communicationsManager.SendData(client.IPAddress, new MessagePacket("ok").Serialize());
+			}
 		}
 
-		private void ConnectClient(Client client, RequestPacket data) {
+		private async Task ConnectClient(Client client, RequestPacket data) {
 			client.Name = data.Data["name"] as string;
 			client.Surname = data.Data["surname"] as string;
 			client.ClientState = ClientState.Waiting;
@@ -61,7 +68,7 @@ namespace QuizMaster___Server.ViewModels {
 			if (!Clients.Contains(client))
 				App.Current.Dispatcher.Invoke(() => Clients.Add(client));
 
-			communicationsManager.SendData(client.IPAddress, responsePacket.Serialize());
+			await communicationsManager.SendData(client.IPAddress, responsePacket.Serialize());
 		}
 	}
 }
