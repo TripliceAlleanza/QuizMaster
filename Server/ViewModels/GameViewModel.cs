@@ -25,7 +25,8 @@ namespace QuizMaster___Server.ViewModels {
 
 		private IOptionsViewModel optionsViewModel;
 		private CommunicationsManager communicationsManager;
-		private Thread broadcastConnectionThread;
+
+		private readonly DictionaryPacket ServerInfo = new DictionaryPacket { {"server_ip", Networking.Networking.GetLocalIPAddressAsync().Result}, {"port", CommunicationsManager.SERVER_PORT}, {"test_puzzle_name", "test"}};
 
 
 		public GameViewModel(IOptionsViewModel optionsViewModel) {
@@ -47,14 +48,17 @@ namespace QuizMaster___Server.ViewModels {
 			ParseJSONCommand(client, JsonConvert.DeserializeObject<RequestPacket>(message));
 		}
 
+		
+
 		private void ParseJSONCommand(Client client, RequestPacket data) {
-			if (data.Request == "connect") {
-				ConnectClient(client, data);
+			if (data.Request == "getserverinfo") {
+				communicationsManager.SendUDP(client.IPAddress, ServerInfo.Serialize());
 			}
 
-			if (data.Request == "ping") {
-				communicationsManager.SendData(client.IPAddress, new MessagePacket("ok").Serialize());
-			}
+
+			if (data.Request == "connect") {
+				ConnectClient(client, data);
+			}	
 		}
 
 		private async Task ConnectClient(Client client, RequestPacket data) {

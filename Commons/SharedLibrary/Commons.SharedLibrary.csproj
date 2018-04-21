@@ -45,6 +45,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="MVVM\RelayCommand.cs" />
+    <Compile Include="Packets\DictionaryPacket.cs" />
     <Compile Include="Packets\MessagePacket.cs" />
     <Compile Include="Packets\RequestPacket.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
