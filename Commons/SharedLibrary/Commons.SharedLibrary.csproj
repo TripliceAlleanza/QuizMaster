@@ -50,6 +50,7 @@
     <Compile Include="Packets\RequestPacket.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="QuizModel\DeployedQuizFormat.cs" />
+    <Compile Include="QuizModel\JsonConverter.cs" />
     <Compile Include="QuizModel\QuestionFormat.cs" />
     <Compile Include="QuizModel\QuizFormat.cs" />
   </ItemGroup>

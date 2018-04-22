@@ -53,8 +53,5 @@ namespace QuizMaster___SharedLibrary.QuizModel {
 
 		}
 
-		public static string ConvertToJson(ref QuizFormat quiz) {
-			return JsonConvert.SerializeObject(quiz);
-		}
 	}
 }
