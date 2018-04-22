@@ -1,15 +1,16 @@
 ﻿using System.Collections.Generic;
-
+using Newtonsoft.Json;
 namespace QuizMaster___SharedLibrary.QuizModel {
 	public class QuizFormat {
 		public int Id { get; set; }
 		public string QuizName { get; set; } = "NO NAME";
 		public bool Randomize { get; set; } = false;
 		public string QuizTimeLimit { get; set; } = "NO TIME LIMIT";
+		public virtual int HashCode { get; set; } = 0;
 		public List<QuestionFormat> Questions { get; set; }
 
 		public QuizFormat() {
-			
+
 		}
 
 		public QuizFormat(string quizName, bool randomize, string quizTimeLimit) {
@@ -38,6 +39,7 @@ namespace QuizMaster___SharedLibrary.QuizModel {
 			hashCode = hashCode * -1521134295 + Randomize.GetHashCode();
 			hashCode = hashCode * -1521134295 + EqualityComparer<string>.Default.GetHashCode(QuizTimeLimit);
 			hashCode = hashCode * -1521134295 + EqualityComparer<List<QuestionFormat>>.Default.GetHashCode(Questions);
+			HashCode = hashCode;
 			return hashCode;
 		}
 
@@ -46,9 +48,13 @@ namespace QuizMaster___SharedLibrary.QuizModel {
 		}
 
 		public static bool operator !=(QuizFormat format1, QuizFormat format2) {
+
 			return !(format1 == format2);
+
 		}
 
-
+		public static string ConvertToJson(ref QuizFormat quiz) {
+			return JsonConvert.SerializeObject(quiz);
+		}
 	}
 }

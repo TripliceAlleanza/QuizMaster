@@ -15,7 +15,7 @@ using LiteDB;
  *please increment the following counter as a warning
  *to the next guy:
  *
- *total_hours_wasted_here = 0.5
+ *total_hours_wasted_here = 5H 32M
  */
 
 namespace QuizMaster___Server.Models {
@@ -27,7 +27,8 @@ namespace QuizMaster___Server.Models {
 
 	public class PuzzleModelService : IPuzzleModelService {
 		private const string DB_FOLDER_NAME = @"\QuizMasterDB";
-		public static string DB_PATH = $"{Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments)}{DB_FOLDER_NAME}{DB_FOLDER_NAME}.db";
+		public static string DB_DEPLOYED_QUIZ = $"{Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments)}{DB_FOLDER_NAME}\\DeployedQuiz.db";
+		public static string DB_UNDEPLOYED_QUIZ = $"{Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments)}{DB_FOLDER_NAME}\\UnDeployedQuiz.db";
 
 		public List<QuizFormat> puzzles;
 

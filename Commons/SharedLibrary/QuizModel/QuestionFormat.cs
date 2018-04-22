@@ -1,4 +1,5 @@
 ﻿using System;
+using Newtonsoft.Json.Serialization;
 using Newtonsoft.Json;
 
 namespace QuizMaster___SharedLibrary.QuizModel {
@@ -22,9 +23,20 @@ namespace QuizMaster___SharedLibrary.QuizModel {
 		public Byte AnswerNumber { get; set; } = 0;
 		public Components ComponentName { get; set; } = Components.NOTDEFINED;
 		public string Text { get; set; } = "NOT DEFINED YET!";
-		[JsonIgnore]public bool? RightAnswer { get; set; } = null;
+		public bool? RightAnswer { get; set; } = null;
 
+		[JsonIgnore]
+		public bool SerializeSensitiveInfo { get; set; }
+		public bool ShouldSerializeUsername() {
+			//only serialize RightAnswer if SerializeSensitiveInfo == true
+			return (this.SerializeSensitiveInfo);
+		}
+		//public bool ShouldSerialize MyPropertyName() {
+		//	return true | false;
+		//}
+		public Predicate<Object> ShouldSerialize { get; set; }
 		public AnswerOption() {
+			
 		}
 
 	}
