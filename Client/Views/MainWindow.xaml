@@ -14,7 +14,7 @@
 
     <Grid>
 
-        
+
         <Grid.RowDefinitions>
             <RowDefinition Height="1*"/>
             <RowDefinition Height="2*" />
@@ -23,7 +23,7 @@
         </Grid.RowDefinitions>
 
         <DockPanel Grid.Row="0" >
-            <Label Content="Kalisa_pearl" HorizontalContentAlignment="Center" Height="50" Width="150" FontSize="24" Style="{StaticResource LabelStyle1}" HorizontalAlignment="Center"/>
+            <Label Content="{Binding StateText}" HorizontalContentAlignment="Center" Height="50" Width="491" FontSize="24" Style="{StaticResource LabelStyle1}" HorizontalAlignment="Center" Margin="0,28"/>
         </DockPanel>
 
         <DockPanel Grid.Row="1">
