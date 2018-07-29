@@ -10,7 +10,6 @@ namespace QuizMaster___SharedLibrary.QuizModel {
 		public List<QuestionFormat> Questions { get; set; }
 
 		public QuizFormat() {
-
 		}
 
 		public QuizFormat(string quizName, bool randomize, string quizTimeLimit) {
@@ -47,9 +46,7 @@ namespace QuizMaster___SharedLibrary.QuizModel {
 		}
 
 		public static bool operator !=(QuizFormat format1, QuizFormat format2) {
-
 			return !(format1 == format2);
-
 		}
 
 	}

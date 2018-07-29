@@ -7,7 +7,6 @@ using Newtonsoft.Json;
 namespace QuizMaster___SharedLibrary.QuizModel {
 	//this model is used by the "client" and on the server to be stored when a "client" has finished the quiz 
 	public class DeployedQuizFormat {
-
 		public string Name { get; set; } = "NO NAME";
 		public string Surname { get; set; } = "NO SURNAME";
 		public string Date { get; set; } = "DD/MM/YYYY";
@@ -31,8 +30,6 @@ namespace QuizMaster___SharedLibrary.QuizModel {
 		public DeployedQuizFormat(string name, string surname, string date, string @class, QuizFormat quizData) : this(name, surname, date, @class) {
 			QuizData = quizData;
 		}
-
-
 		public override bool Equals(object obj) {
 			var format = obj as DeployedQuizFormat;
 			return format != null &&

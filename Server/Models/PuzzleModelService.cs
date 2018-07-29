@@ -25,7 +25,6 @@ namespace QuizMaster___Server.Models {
 		IList<QuizFormat> Puzzles { get; }
 	}
 
-
 	public class PuzzleModelService : IPuzzleModelService {
 		private const string DB_FOLDER_NAME = @"\QuizMasterDB";
 		public static string DB_DEPLOYED_QUIZ = $"{Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments)}{DB_FOLDER_NAME}\\DeployedQuiz.db";
