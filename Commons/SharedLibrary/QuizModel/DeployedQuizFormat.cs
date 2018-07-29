@@ -5,12 +5,16 @@ using System.Text;
 using System.Threading.Tasks;
 using Newtonsoft.Json;
 namespace QuizMaster___SharedLibrary.QuizModel {
+	//this model is used by the "client" and on the server to be stored when a "client" has finished the quiz 
 	public class DeployedQuizFormat {
 
 		public string Name { get; set; } = "NO NAME";
 		public string Surname { get; set; } = "NO SURNAME";
 		public string Date { get; set; } = "DD/MM/YYYY";
 		public string Class { get; set; } = "NO CLASS"; //example: 4G-inf2
+
+		//TODO: TimeLeft need to be used updeted to recover the quiz after a system crash...
+		public string TimeLeft { get; set; } = "NO TIME LIMIT";
 		public QuizFormat QuizData { get; set; }
 
 		public DeployedQuizFormat() {

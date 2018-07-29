@@ -25,16 +25,18 @@ namespace QuizMaster___SharedLibrary.QuizModel {
 		public string Text { get; set; } = "NOT DEFINED YET!";
 		public bool? RightAnswer { get; set; } = null;
 
-		[JsonIgnore]
-		public bool SerializeSensitiveInfo { get; set; }
-		public bool ShouldSerializeUsername() {
-			//only serialize RightAnswer if SerializeSensitiveInfo == true
-			return (this.SerializeSensitiveInfo);
-		}
-		//public bool ShouldSerialize MyPropertyName() {
-		//	return true | false;
+		//don't remember what i was doing hear... don't delete it please ;-)
+		//[JsonIgnore]
+		//public bool SerializeSensitiveInfo { get; set; }
+		//public bool ShouldSerializeUsername() {
+		//	//only serialize RightAnswer if SerializeSensitiveInfo == true
+		//	return (this.SerializeSensitiveInfo);
 		//}
-		public Predicate<Object> ShouldSerialize { get; set; }
+		////public bool ShouldSerialize MyPropertyName() {
+		////	return true | false;
+		////}
+		//public Predicate<Object> ShouldSerialize { get; set; }
+
 		public AnswerOption() {
 			
 		}

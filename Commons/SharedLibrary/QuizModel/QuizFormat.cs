@@ -6,7 +6,7 @@ namespace QuizMaster___SharedLibrary.QuizModel {
 		public string QuizName { get; set; } = "NO NAME";
 		public bool Randomize { get; set; } = false;
 		public string QuizTimeLimit { get; set; } = "NO TIME LIMIT";
-		public virtual int HashCode { get; set; } = 0;
+		public int HashCode { get; set; } = 0;
 		public List<QuestionFormat> Questions { get; set; }
 
 		public QuizFormat() {
@@ -38,8 +38,7 @@ namespace QuizMaster___SharedLibrary.QuizModel {
 			hashCode = hashCode * -1521134295 + EqualityComparer<string>.Default.GetHashCode(QuizName);
 			hashCode = hashCode * -1521134295 + Randomize.GetHashCode();
 			hashCode = hashCode * -1521134295 + EqualityComparer<string>.Default.GetHashCode(QuizTimeLimit);
-			hashCode = hashCode * -1521134295 + EqualityComparer<List<QuestionFormat>>.Default.GetHashCode(Questions);
-			HashCode = hashCode;
+			hashCode = hashCode * -1521134295 + EqualityComparer<List<QuestionFormat>>.Default.GetHashCode(Questions);			
 			return hashCode;
 		}
 

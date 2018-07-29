@@ -15,8 +15,9 @@ using LiteDB;
  *please increment the following counter as a warning
  *to the next guy:
  *
- *total_hours_wasted_here = 5H 32M
+ *total_hours_wasted_here = 7H 51M
  */
+ //P.S the counter includes the time wasted in 'QuizModel' 
 
 namespace QuizMaster___Server.Models {
 
